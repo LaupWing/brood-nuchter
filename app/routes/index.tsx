@@ -10,7 +10,7 @@ export const meta = () => {
 export default function Index() {
    return (
       <>
-         <img src={image} alt="" />
+         <img className="w-full max-w-lg ml-auto" src={image} alt="" />
       </>
    )
 }
