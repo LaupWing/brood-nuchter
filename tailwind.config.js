@@ -15,6 +15,10 @@ module.exports = {
             }
          }
       },
+      fontFamily: {
+         sans: ["Open Sans","sans-serif"],
+         serif: ["Playfair Display","sans-serif"]
+      }
    },
    plugins: [],
 }
