@@ -14,6 +14,7 @@ import {
 import type { Shop } from "@shopify/hydrogen/storefront-api-types"
 import favicon from "../public/favicon.svg"
 import tailwind from "./styles/tailwind-build.css"
+import { Layout } from "~/components/global"
 
 export const links: LinksFunction = () => {
    return [
@@ -52,9 +53,9 @@ export default function App() {
             <Links />
          </head>
          <body>
-            <h1>Hello, {name}</h1>
-            <p>This is a custom storefront powered by Hydrogen</p>
-            <Outlet />
+            <Layout>
+               <Outlet />
+            </Layout>
             <ScrollRestoration />
             <Scripts />
          </body>
