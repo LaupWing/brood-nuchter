@@ -27,6 +27,9 @@ export default function Index() {
                alt="" 
             />
          </div>
+         <div className="container h-screen">
+            <h2 className="text-2xl">Klant favorietes</h2>
+         </div>
       </>
    )
 }
