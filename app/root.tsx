@@ -52,7 +52,7 @@ export default function App() {
             <Meta />
             <Links />
          </head>
-         <body className="flex flex-col fixed inset-0 overflow-y-auto">
+         <body className="flex flex-col overflow-y-auto">
             <Layout>
                <Outlet />
             </Layout>
