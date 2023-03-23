@@ -36,7 +36,7 @@ export const Layout:FC<PropsWithChildren> = ({
 
 const Header = () => {
    return (
-      <header className="container flex items-center justify-between mx-auto text-white fixed top-0 z-50">
+      <header className="container flex items-center justify-between mx-auto text-white fixed top-0 z-[1000]">
          <div className="flex flex-col">
             <GiSlicedBread size={40} className="" />
             <h1>Brood Nuchter</h1>
@@ -45,7 +45,10 @@ const Header = () => {
          <nav className="flex space-x-10 items-center">
             <ul className="flex space-x-10">
                {nav_links.map((link, i) =>(
-                  <li key={i}>{link.name}</li>
+                  <li 
+                     key={i}
+                     className="tracking-tight"
+                  >{link.name}</li>
                ))}
             </ul>
             <AiOutlineShop size={30}/>
