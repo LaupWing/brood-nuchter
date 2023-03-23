@@ -402,7 +402,34 @@ video {
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
-/* New component styles can go here */
+.container{
+  width: 100%;
+}
+@media (min-width: 640px){
+  .container{
+    max-width: 640px;
+  }
+}
+@media (min-width: 768px){
+  .container{
+    max-width: 768px;
+  }
+}
+@media (min-width: 1024px){
+  .container{
+    max-width: 1024px;
+  }
+}
+@media (min-width: 1280px){
+  .container{
+    max-width: 1280px;
+  }
+}
+@media (min-width: 1536px){
+  .container{
+    max-width: 1536px;
+  }
+}
 .fixed{
   position: fixed;
 }
@@ -418,6 +445,12 @@ video {
   bottom: 0px;
   left: 0px;
 }
+.top-0{
+  top: 0px;
+}
+.z-50{
+  z-index: 50;
+}
 .mx-auto{
   margin-left: auto;
   margin-right: auto;
@@ -428,11 +461,17 @@ video {
 .flex{
   display: flex;
 }
+.h-full{
+  height: 100%;
+}
 .h-screen{
   height: 100vh;
 }
-.h-full{
-  height: 100%;
+.h-minus-nav{
+  height: calc(100vh - var(--height-nav));
+}
+.h-nav{
+  height: var(--height-nav);
 }
 .min-h-screen{
   min-height: 100vh;
@@ -446,11 +485,22 @@ video {
 .max-w-5xl{
   max-width: 64rem;
 }
-.max-w-lg{
-  max-width: 32rem;
-}
 .flex-col{
   flex-direction: column;
+}
+.items-center{
+  align-items: center;
+}
+.justify-between{
+  justify-content: space-between;
+}
+.justify-around{
+  justify-content: space-around;
+}
+.space-x-10 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-x-reverse: 0;
+  margin-right: calc(2.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(2.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
 .overflow-y-auto{
   overflow-y: auto;
@@ -459,13 +509,26 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(20 19 19 / var(--tw-bg-opacity));
 }
-.bg-main-dark\/10{
-  background-color: rgb(20 19 19 / 0.1);
-}
 .bg-main-dark\/60{
   background-color: rgb(20 19 19 / 0.6);
 }
 .object-cover{
   -o-object-fit: cover;
      object-fit: cover;
+}
+.text-white{
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+:root {
+   --height-nav: 3rem;
+
+   @media (min-width: 32em) {
+      --height-nav: 4rem;
+   }
+
+   @media (min-width: 48em) {
+      --height-nav: 4.5rem;
+   }
 }

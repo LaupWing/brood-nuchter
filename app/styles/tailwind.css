@@ -3,6 +3,14 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-  /* New component styles can go here */
+:root {
+   --height-nav: 3rem;
+
+   @media (min-width: 32em) {
+      --height-nav: 4rem;
+   }
+
+   @media (min-width: 48em) {
+      --height-nav: 4.5rem;
+   }
 }

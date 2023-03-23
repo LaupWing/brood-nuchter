@@ -13,6 +13,12 @@ module.exports = {
                fire: "#F3A446",
                bread: "#A06235"
             }
+         },
+         spacing: {
+            nav: "var(--height-nav)"
+         },
+         height: {
+            "minus-nav": "calc(100vh - var(--height-nav))"
          }
       },
       fontFamily: {
