@@ -36,10 +36,13 @@ export const Layout:FC<PropsWithChildren> = ({
 
 const Header = () => {
    return (
-      <header className="container flex items-center justify-between mx-auto text-white fixed top-0 z-[1000]">
-         <div className="flex flex-col">
-            <GiSlicedBread size={40} className="" />
-            <h1>Brood Nuchter</h1>
+      <header className="container flex items-center justify-between mx-auto text-white fixed top-0 z-[1000] py-4">
+         <div className="flex items-center">
+            <GiSlicedBread size={40} className="mr-1" />
+            <div className="flex flex-col font-serif leading-4 text-lg">
+               <h1>Brood</h1>
+               <h1>Nuchter</h1>
+            </div>
          </div>
 
          <nav className="flex space-x-10 items-center">
