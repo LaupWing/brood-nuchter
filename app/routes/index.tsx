@@ -1,4 +1,4 @@
-import image from "~/images/bread.png"
+import image from "~/images/bread.jpg"
 
 export const meta = () => {
    return {
@@ -10,7 +10,10 @@ export const meta = () => {
 export default function Index() {
    return (
       <>
-         <img className="w-full max-w-lg ml-auto" src={image} alt="" />
+         <div className="min-h-screen relative w-full inset-0">
+            <div className="absolute inset-0 bg-main-dark/60"/>
+            <img className="w-full h-full ml-auto" src={image} alt="" />
+         </div>
       </>
    )
 }
