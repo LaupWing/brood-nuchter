@@ -10,9 +10,9 @@ export const meta = () => {
 export default function Index() {
    return (
       <>
-         <div className="min-h-screen relative w-full inset-0">
+         <div className="h-screen relative w-full inset-0">
             <div className="absolute inset-0 bg-main-dark/60"/>
-            <img className="w-full h-full ml-auto" src={image} alt="" />
+            <img className="w-full h-full ml-auto object-cover" src={image} alt="" />
          </div>
       </>
    )
