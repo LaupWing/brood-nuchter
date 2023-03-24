@@ -26,6 +26,7 @@ export default function Index() {
                src={image} 
                alt="" 
             />
+            <div className="h-[30%] bg-gradient-to-b from-main-dark/0 to-main-dark absolute w-full bottom-0 left-0"/>
          </div>
          <div className="container h-screen py-10">
             <h2 className="text-2xl text-accent-fire font-serif">Klant favorietes</h2>
