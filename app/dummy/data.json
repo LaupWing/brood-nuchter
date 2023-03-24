@@ -1,0 +1,44 @@
+[
+   {
+      "id": 1,
+      "name": "Sourdough",
+      "description": "A classic sourdough bread with a tangy flavor and chewy texture.",
+      "price": 5.99,
+      "image": "https://www.example.com/bakery/sourdough.jpg"
+   },
+   {
+      "id": 2,
+      "name": "Baguette",
+      "description": "A long, thin loaf with a crispy crust and soft interior.",
+      "price": 3.99,
+      "image": "https://www.example.com/bakery/baguette.jpg"
+   },
+   {
+      "id": 3,
+      "name": "Multigrain",
+      "description": "A hearty bread made with a variety of grains and seeds.",
+      "price": 6.99,
+      "image": "https://www.example.com/bakery/multigrain.jpg"
+   },
+   {
+      "id": 4,
+      "name": "Ciabatta",
+      "description": "An Italian bread with a soft, chewy texture and holes throughout.",
+      "price": 4.99,
+      "image": "https://www.example.com/bakery/ciabatta.jpg"
+   },
+   {
+      "id": 5,
+      "name": "Focaccia",
+      "description": "A flat bread with a soft, fluffy texture and a variety of toppings.",
+      "price": 7.99,
+      "image": "https://www.example.com/bakery/focaccia.jpg"
+   },
+   {
+      "id": 6,
+      "name": "Rye",
+      "description": "A dense, hearty bread made with rye flour and caraway seeds.",
+      "price": 5.99,
+      "image": "https://www.example.com/bakery/rye.jpg"
+   }
+]
