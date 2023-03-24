@@ -46,10 +46,11 @@ export default function Index() {
                            alt="" 
                            className="h-full w-full object-cover absolute inset-0"
                         />
-                        <AiOutlineInfoCircle 
-                           className="absolute bottom-0 right-0"
-                           size={30} 
-                        />
+                        <div className="absolute bottom-0 right-0">
+                           <AiOutlineInfoCircle
+                              size={30} 
+                           />
+                        </div>
                      </div>
                      <div className="flex flex-col flex-1 space-y-4">
                         <div className="flex justify-between font-serif mb-auto">
