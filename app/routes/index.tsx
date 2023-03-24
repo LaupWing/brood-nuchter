@@ -1,4 +1,4 @@
-import { AiOutlineInfoCircle } from "react-icons/ai"
+import { AiFillFacebook, AiFillInstagram, AiOutlineInfoCircle } from "react-icons/ai"
 import image from "~/images/bread.jpg"
 import tosti from "~/images/tosti.png"
 import data from "../dummy/data.json"
@@ -19,13 +19,14 @@ export default function Index() {
             <div className="z-50 my-auto container mx-auto flex justify-between">
                <div className="font-serif max-w-xs flex flex-col">
                   <h2 className="text-3xl text-white">Lorem ipsum dolor sit, amet consectetur</h2>
-                  <p className="text-white text-sm mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis fugiat eveniet obcaecati corporis asperiores molestias eos dignissimos assumenda dolore et explicabo molestiae expedita.</p>
+                  <p className="text-white text-sm my-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis fugiat eveniet obcaecati corporis asperiores molestias eos dignissimos assumenda dolore et explicabo molestiae expedita.</p>
                   <button className="bg-accent-fire capitalize px-4 py-1 mt-4 shadow font-bold rounded tracking-tight text-main-dark mr-auto">
                      Shop now
                   </button>
                </div>
-               <div>
-
+               <div className="flex flex-col text-main-light mb-auto space-y-4">
+                  <AiFillInstagram size={24} />
+                  <AiFillFacebook size={24} />
                </div>
             </div>
             <img 

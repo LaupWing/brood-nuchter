@@ -471,6 +471,10 @@ video {
   margin-top: auto;
   margin-bottom: auto;
 }
+.my-6{
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
 .mb-10{
   margin-bottom: 2.5rem;
 }
