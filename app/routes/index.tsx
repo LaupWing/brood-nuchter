@@ -2,7 +2,7 @@ import { AiFillFacebook, AiFillInstagram, AiOutlineFieldTime, AiOutlineInfoCircl
 import image from "~/images/bread.jpg"
 import tosti from "~/images/tosti.png"
 import data from "../dummy/data.json"
-
+import { BiFilter, BiSortDown } from "react-icons/bi"
 
 export const meta = () => {
    return {
@@ -43,6 +43,14 @@ export default function Index() {
                   <AiOutlineFieldTime size={34} className="mr-2" />
                   <p className="max-w-[10rem] leading-4">Alle orders kunnen worden opgehaald op woensdag en zaterdag</p>
                </div>
+            </div>
+            <div className="flex space-x-4">
+               <button className="text-accent-fire font-bold text-sm tracking-wider border-2 border-accent-fire rounded px-2 py-1 flex items-center justify-center w-24">
+                  <BiFilter className="mr-1" size={22} /> Filter</button>
+               <button className="text-accent-fire font-bold text-sm tracking-wider border-2 border-accent-fire rounded px-2 py-1 flex items-center justify-center w-24">
+                  <BiSortDown className="mr-1" size={22} />
+                  Sort
+               </button>
             </div>
             <section className="grid grid-cols-4 gap-4 py-10 auto-rows-auto">
                {data.map(x => (
