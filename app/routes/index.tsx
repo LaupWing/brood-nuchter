@@ -34,17 +34,17 @@ export default function Index() {
          </div>
          <div className="container h-screen py-10">
             <h2 className="text-2xl text-accent-fire font-serif mb-10">Klant favorietes</h2>
-            <section className="grid grid-cols-4 gap-4 py-10">
+            <section className="grid grid-cols-4 gap-4 py-10 auto-rows-auto">
                {data.map(x => (
                   <div 
                      key={x.id}
-                     className="aspect-[4/5] bg-main-gray shadow-main-gray shadow rounded hover:bg-accent-fire/30 duration-200 p-4 text-main-light flex flex-col"
+                     className="aspect-[4/5] bg-main-gray shadow-main-gray shadow rounded hover:bg-accent-fire/30 auto-rows-fr duration-200 p-4 text-main-light flex flex-col"
                   >
-                     <div className="h-[70%] relative">
+                     <div className="h-[60%] relative">
                         <img 
                            src={tosti}
                            alt="" 
-                           className="h-full object-cover absolute inset-0"
+                           className="h-full w-full object-cover absolute inset-0"
                         />
                         <AiOutlineInfoCircle 
                            className="absolute bottom-0 right-0"

@@ -1,44 +1,29 @@
 [
    {
       "id": 1,
-      "name": "Sourdough",
-      "description": "A classic sourdough bread with a tangy flavor and chewy texture.",
-      "price": 5.99,
-      "image": "https://www.example.com/bakery/sourdough.jpg"
+      "name": "Sourdough Bread",
+      "price": 4.99,
+      "description": "Our classic sourdough bread is made with a wild yeast starter and slow fermentation for a tangy and chewy texture.",
+      "image": "https://example.com/sourdough-bread.jpg",
+      "weight": 900,
+      "ingredients": ["Flour", "Water", "Salt", "Wild Yeast Starter"]
    },
    {
       "id": 2,
       "name": "Baguette",
-      "description": "A long, thin loaf with a crispy crust and soft interior.",
-      "price": 3.99,
-      "image": "https://www.example.com/bakery/baguette.jpg"
+      "price": 2.99,
+      "description": "Our crispy baguette is perfect for sandwiches or dipping into olive oil and balsamic vinegar.",
+      "image": "https://example.com/baguette.jpg",
+      "weight": 500,
+      "ingredients": ["Flour", "Water", "Salt", "Yeast"]
    },
    {
       "id": 3,
-      "name": "Multigrain",
-      "description": "A hearty bread made with a variety of grains and seeds.",
-      "price": 6.99,
-      "image": "https://www.example.com/bakery/multigrain.jpg"
-   },
-   {
-      "id": 4,
-      "name": "Ciabatta",
-      "description": "An Italian bread with a soft, chewy texture and holes throughout.",
-      "price": 4.99,
-      "image": "https://www.example.com/bakery/ciabatta.jpg"
-   },
-   {
-      "id": 5,
-      "name": "Focaccia",
-      "description": "A flat bread with a soft, fluffy texture and a variety of toppings.",
-      "price": 7.99,
-      "image": "https://www.example.com/bakery/focaccia.jpg"
-   },
-   {
-      "id": 6,
-      "name": "Rye",
-      "description": "A dense, hearty bread made with rye flour and caraway seeds.",
-      "price": 5.99,
-      "image": "https://www.example.com/bakery/rye.jpg"
+      "name": "Croissant",
+      "price": 3.49,
+      "description": "Our flaky and buttery croissants are perfect for breakfast or as a snack.",
+      "image": "https://example.com/croissant.jpg",
+      "weight": 60,
+      "ingredients": ["Flour", "Butter", "Sugar", "Yeast", "Salt", "Milk"]
    }
 ]

@@ -463,6 +463,9 @@ video {
 .z-\[1000\]{
   z-index: 1000;
 }
+.row-auto{
+  grid-row: auto;
+}
 .mx-auto{
   margin-left: auto;
   margin-right: auto;
@@ -498,6 +501,9 @@ video {
 .aspect-\[4\/5\]{
   aspect-ratio: 4/5;
 }
+.aspect-\[4\/6\]{
+  aspect-ratio: 4/6;
+}
 .h-\[30\%\]{
   height: 30%;
 }
@@ -513,6 +519,9 @@ video {
 .h-\[70\%\]{
   height: 70%;
 }
+.h-\[60\%\]{
+  height: 60%;
+}
 .w-full{
   width: 100%;
 }
@@ -521,6 +530,12 @@ video {
 }
 .max-w-xs{
   max-width: 20rem;
+}
+.auto-rows-auto{
+  grid-auto-rows: auto;
+}
+.auto-rows-fr{
+  grid-auto-rows: minmax(0, 1fr);
 }
 .grid-cols-4{
   grid-template-columns: repeat(4, minmax(0, 1fr));
