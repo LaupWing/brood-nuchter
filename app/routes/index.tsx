@@ -54,7 +54,7 @@ export default function Index() {
                      <div className="flex flex-col flex-1 space-y-4">
                         <div className="flex justify-between font-serif mb-auto">
                            <p>$ {x.price}</p>
-                           <p>320 gram</p>
+                           <p>{x.weight} gram</p>
                         </div>
                         <div className="flex items-end justify-between">
                            <h2 className="font-bold font-serif tracking-wider text-xl">{x.name}</h2>
