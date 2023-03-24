@@ -1,4 +1,4 @@
-import { AiFillFacebook, AiFillInstagram, AiOutlineInfoCircle } from "react-icons/ai"
+import { AiFillFacebook, AiFillInstagram, AiOutlineFieldTime, AiOutlineInfoCircle } from "react-icons/ai"
 import image from "~/images/bread.jpg"
 import tosti from "~/images/tosti.png"
 import data from "../dummy/data.json"
@@ -36,8 +36,14 @@ export default function Index() {
             />
             <div className="h-[30%] bg-gradient-to-b from-main-dark/0 to-main-dark absolute w-full bottom-0 left-0"/>
          </div>
-         <div className="container h-screen py-10">
-            <h2 className="text-2xl text-accent-fire font-serif mb-10">Klant favorietes</h2>
+         <div className="container py-10">
+            <div className="flex justify-between mb-10 items-center text-accent-fire">
+               <h2 className="text-2xl font-serif">Klant favorietes</h2>
+               <div className="text-xs flex items-center text-accent-bread">
+                  <AiOutlineFieldTime size={34} className="mr-2" />
+                  <p className="max-w-[10rem] leading-4">Alle orders kunnen worden opgehaald op woensdag en zaterdag</p>
+               </div>
+            </div>
             <section className="grid grid-cols-4 gap-4 py-10 auto-rows-auto">
                {data.map(x => (
                   <div 
