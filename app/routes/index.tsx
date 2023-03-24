@@ -40,7 +40,7 @@ export default function Index() {
                      key={x.id}
                      className="aspect-[4/5] bg-main-gray shadow-main-gray shadow rounded hover:bg-accent-fire/30 auto-rows-fr duration-200 p-4 text-main-light flex flex-col"
                   >
-                     <div className="h-[60%] relative">
+                     <div className="h-[65%] relative mb-2">
                         <img 
                            src={tosti}
                            alt="" 
@@ -51,8 +51,8 @@ export default function Index() {
                            size={30} 
                         />
                      </div>
-                     <div className="flex flex-col mt-auto space-y-4">
-                        <div className="flex justify-between font-serif">
+                     <div className="flex flex-col flex-1 space-y-4">
+                        <div className="flex justify-between font-serif mb-auto">
                            <p>$ {x.price}</p>
                            <p>320 gram</p>
                         </div>

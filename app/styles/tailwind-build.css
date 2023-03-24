@@ -492,6 +492,15 @@ video {
 .mt-auto{
   margin-top: auto;
 }
+.mb-auto{
+  margin-bottom: auto;
+}
+.mb-4{
+  margin-bottom: 1rem;
+}
+.mb-2{
+  margin-bottom: 0.5rem;
+}
 .flex{
   display: flex;
 }
@@ -522,6 +531,9 @@ video {
 .h-\[60\%\]{
   height: 60%;
 }
+.h-\[65\%\]{
+  height: 65%;
+}
 .w-full{
   width: 100%;
 }
@@ -530,6 +542,9 @@ video {
 }
 .max-w-xs{
   max-width: 20rem;
+}
+.flex-1{
+  flex: 1 1 0%;
 }
 .auto-rows-auto{
   grid-auto-rows: auto;

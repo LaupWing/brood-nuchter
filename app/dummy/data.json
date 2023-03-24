@@ -25,5 +25,47 @@
       "image": "https://example.com/croissant.jpg",
       "weight": 60,
       "ingredients": ["Flour", "Butter", "Sugar", "Yeast", "Salt", "Milk"]
+   },
+   {
+      "id": 4,
+      "name": "Cinnamon Raisin Bread",
+      "price": 5.99,
+      "description": "Our cinnamon raisin bread is perfect for toast or as a sweet treat.",
+      "image": "https://example.com/cinnamon-raisin-bread.jpg",
+      "weight": 800,
+      "ingredients": [
+         "Flour",
+         "Water",
+         "Raisins",
+         "Cinnamon",
+         "Sugar",
+         "Yeast",
+         "Salt"
+      ]
+   },
+   {
+      "id": 5,
+      "name": "Whole Wheat Bread",
+      "price": 4.49,
+      "description": "Our whole wheat bread is made with 100% whole grain flour for a healthy and hearty option.",
+      "image": "https://example.com/whole-wheat-bread.jpg",
+      "weight": 1000,
+      "ingredients": [
+         "Whole Grain Flour",
+         "Water",
+         "Honey",
+         "Olive Oil",
+         "Yeast",
+         "Salt"
+      ]
+   },
+   {
+      "id": 6,
+      "name": "Focaccia Bread",
+      "price": 6.99,
+      "description": "Our focaccia bread is topped with olive oil, sea salt, and herbs for a delicious and savory flavor.",
+      "image": "https://example.com/focaccia-bread.jpg",
+      "weight": 700,
+      "ingredients": ["Flour", "Water", "Olive Oil", "Yeast", "Salt", "Herbs"]
    }
 ]
