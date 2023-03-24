@@ -1,5 +1,8 @@
+import { AiOutlineInfoCircle } from "react-icons/ai"
 import image from "~/images/bread.jpg"
+import tosti from "~/images/tosti.png"
 import data from "../dummy/data.json"
+
 
 export const meta = () => {
    return {
@@ -35,13 +38,17 @@ export default function Index() {
                {data.map(x => (
                   <div 
                      key={x.id}
-                     className="aspect-[4/5] bg-main-gray shadow-main-gray shadow rounded hover:bg-accent-fire/30 duration-200 p-4"
+                     className="aspect-[4/5] bg-main-gray shadow-main-gray shadow rounded hover:bg-accent-fire/30 duration-200 p-4 text-main-light"
                   >
-                     <div className="h-[80%]">
+                     <div className="h-[80%] relative">
                         <img 
-                           src="https://static.wixstatic.com/media/1457e8_6b1a03a14caa48f4a0e40da9d12511ff~mv2.jpg/v1/fill/w_800,h_533,al_c,q_85/1457e8_6b1a03a14caa48f4a0e40da9d12511ff~mv2.jpg"
+                           src={tosti}
                            alt="" 
-                           className="h-full object-cover"
+                           className="h-full object-cover absolute inset-0"
+                        />
+                        <AiOutlineInfoCircle 
+                           className="absolute bottom-0 right-0"
+                           size={30} 
                         />
                      </div>
                   </div>
