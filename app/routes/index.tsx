@@ -27,8 +27,8 @@ export default function Index() {
                alt="" 
             />
          </div>
-         <div className="container h-screen">
-            <h2 className="text-2xl">Klant favorietes</h2>
+         <div className="container h-screen py-10">
+            <h2 className="text-2xl text-accent-fire font-serif">Klant favorietes</h2>
          </div>
       </>
    )
