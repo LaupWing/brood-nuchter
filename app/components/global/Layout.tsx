@@ -25,7 +25,7 @@ export const Layout:FC<PropsWithChildren> = ({
    children
 }) => {
    return (
-      <div className="flex flex-col items-center bg-main-dark">
+      <div className="flex flex-col items-center">
          <Header />
          { children }
          {/* <div className="mx-auto w-full max-w-5xl">

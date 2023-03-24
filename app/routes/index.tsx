@@ -1,4 +1,5 @@
 import image from "~/images/bread.jpg"
+import data from "../dummy/data.json"
 
 export const meta = () => {
    return {
@@ -29,7 +30,23 @@ export default function Index() {
             <div className="h-[30%] bg-gradient-to-b from-main-dark/0 to-main-dark absolute w-full bottom-0 left-0"/>
          </div>
          <div className="container h-screen py-10">
-            <h2 className="text-2xl text-accent-fire font-serif">Klant favorietes</h2>
+            <h2 className="text-2xl text-accent-fire font-serif mb-10">Klant favorietes</h2>
+            <section className="grid grid-cols-4 gap-4 py-10">
+               {data.map(x => (
+                  <div 
+                     key={x.id}
+                     className="aspect-[4/5] bg-main-gray shadow-main-gray shadow rounded hover:bg-accent-fire/30 duration-200 p-4"
+                  >
+                     <div className="h-[80%]">
+                        <img 
+                           src="https://static.wixstatic.com/media/1457e8_6b1a03a14caa48f4a0e40da9d12511ff~mv2.jpg/v1/fill/w_800,h_533,al_c,q_85/1457e8_6b1a03a14caa48f4a0e40da9d12511ff~mv2.jpg"
+                           alt="" 
+                           className="h-full object-cover"
+                        />
+                     </div>
+                  </div>
+               ))}
+            </section>
          </div>
       </>
    )
