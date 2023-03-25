@@ -2,6 +2,7 @@ import { AiFillFacebook, AiFillInstagram, AiOutlineFieldTime, AiOutlineInfoCircl
 import image from "~/images/bread.jpg"
 import data from "../dummy/data.json"
 import { BiFilter, BiSortDown } from "react-icons/bi"
+import { ProductCard } from "~/components/cards"
 
 export const meta = () => {
    return {
@@ -52,9 +53,12 @@ export default function Index() {
                </button>
             </div>
             <section className="grid grid-cols-4 gap-4 py-10 auto-rows-auto">
-               {/* {data.map(x => (
-                  
-               ))} */}
+               {data.map(bread => (
+                  <ProductCard 
+                     bread={bread}
+                     key={bread.id}
+                  />   
+               ))}
             </section>
          </div>
       </>

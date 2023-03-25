@@ -4,6 +4,6 @@ interface BreadType {
    description: string 
    price: number
    image: string 
-   weight: string 
+   weight: number 
    ingredients: string[] 
 }
