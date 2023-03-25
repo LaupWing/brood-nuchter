@@ -1,1 +1,1 @@
-export { Productcart } from "./Productcart"
+export { ProductCard } from "./ProductCard"
