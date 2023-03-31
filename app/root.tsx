@@ -64,10 +64,29 @@ export default function App() {
 }
 
 const LAYOUT_QUERY = `#graphql
-   query layout {
+   query layoutMenus(
+      $headerMenuHandle: String!
+      $footerMenuHandle: String!
+   ) {
       shop {
          name
+         id
          description
       }
+      headerMenu: menu(handle: $headerMenuHandle) {
+         id
+      }
+      footerMenu: menu(handle: $footerMenuHandle) {
+         id
+      }
+   }
+
+   fragment MenuItem on MenuItem {
+      id
+      resourceId
+      tags
+      title
+      type
+      url
    }
 `
