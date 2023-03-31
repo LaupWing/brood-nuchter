@@ -12,7 +12,7 @@ import {
    ScrollRestoration,
    useLoaderData,
 } from "@remix-run/react"
-import type { MenuItem, Shop } from "@shopify/hydrogen/storefront-api-types"
+import type { Shop, Menu } from "@shopify/hydrogen/storefront-api-types"
 import favicon from "../public/favicon.svg"
 import tailwind from "./styles/tailwind-build.css"
 import { Layout } from "~/components/global"
@@ -38,8 +38,8 @@ export const meta: MetaFunction = () => ({
 })
 
 export interface LayoutData {
-   headerMenu: MenuItem[]
-   footerMenu: MenuItem[]
+   headerMenu: Menu
+   footerMenu: Menu
    shop: Shop
 }
 

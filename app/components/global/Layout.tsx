@@ -35,7 +35,7 @@ export const Layout:FC<LayoutProps> = ({
 }) => {
    return (
       <div className="flex flex-col items-center">
-         <Header menu={layout.headerMenu} />
+         {/* <Header menu={layout.headerMenu} /> */}
          { children }
          {/* <div className="mx-auto w-full max-w-5xl">
          </div> */}
