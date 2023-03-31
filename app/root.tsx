@@ -37,14 +37,19 @@ export const meta: MetaFunction = () => ({
 })
 
 export async function loader({ context }: LoaderArgs) {
-   const layout = await context.storefront.query<{ shop: Shop }>(LAYOUT_QUERY)
+   const layout = await context.storefront.query<{ shop: Shop }>(LAYOUT_QUERY, {
+      variables: {
+         headerMenuHandle: "main-menu",
+         footerMenuHandle: "footer"
+      }
+   })
    return { layout }
 }
 
 export default function App() {
    const data = useLoaderData<typeof loader>()
 
-   const { name } = data.layout.shop
+   console.log(data)
 
    return (
       <html lang="en">
