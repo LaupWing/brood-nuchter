@@ -28,7 +28,7 @@ interface LayoutProps extends PropsWithChildren {
    layout: LayoutData
 }
 
-export const Layout:FC<PropsWithChildren> = ({
+export const Layout:FC<LayoutProps> = ({
    children
 }) => {
    return (

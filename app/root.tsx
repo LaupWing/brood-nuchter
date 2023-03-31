@@ -2,6 +2,7 @@ import {
    type LinksFunction,
    type MetaFunction,
    type LoaderArgs,
+   defer,
 } from "@shopify/remix-oxygen"
 import {
    Links,
@@ -43,13 +44,18 @@ export interface LayoutData {
 }
 
 export async function loader({ context }: LoaderArgs) {
-   const layout = await context.storefront.query<LayoutData>(LAYOUT_QUERY, {
+   const data = await context.storefront.query<LayoutData>(LAYOUT_QUERY, {
       variables: {
          headerMenuHandle: "main-menu",
          footerMenuHandle: "footer"
       }
    })
-   return { layout }
+   
+   return defer({ layout: {
+      shop: data.shop!,
+      headerMenu: data.headerMenu!,
+      footerMenu: data.footerMenu!
+   } })
 }
 
 export default function App() {
@@ -64,7 +70,7 @@ export default function App() {
             <Links />
          </head>
          <body className="flex flex-col overflow-y-auto bg-main-dark">
-            <Layout>
+            <Layout layout={data.layout}>
                <Outlet />
             </Layout>
             <ScrollRestoration />
