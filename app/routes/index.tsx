@@ -64,3 +64,7 @@ export default function Index() {
       </>
    )
 }
+
+// export const HOME_PAGE_FEATURED_PRODUCTS_QUERY = `#graphql
+
+// `
