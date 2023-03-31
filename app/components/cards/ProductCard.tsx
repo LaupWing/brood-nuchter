@@ -1,6 +1,6 @@
 import { FC } from "react"
 import { AiOutlineInfoCircle } from "react-icons/ai"
-import tosti from "~/images/tosti.png"
+import tosti from "~/images/products/tosti.png"
 
 interface ProductCardProps {
    bread: BreadType
