@@ -61,8 +61,6 @@ export async function loader({ context }: LoaderArgs) {
 export default function App() {
    const data = useLoaderData<typeof loader>()
 
-   console.log(data)
-
    return (
       <html lang="en">
          <head>
@@ -70,7 +68,7 @@ export default function App() {
             <Links />
          </head>
          <body className="flex flex-col overflow-y-auto bg-main-dark">
-            <Layout layout={data.layout}>
+            <Layout layout={data.layout as LayoutData}>
                <Outlet />
             </Layout>
             <ScrollRestoration />
