@@ -38,10 +38,12 @@ export const meta: MetaFunction = () => ({
 
 export interface LayoutData {
    headerMenu: MenuItem[]
+   footerMenu: MenuItem[]
+   shop: Shop
 }
 
 export async function loader({ context }: LoaderArgs) {
-   const layout = await context.storefront.query<{ shop: Shop }>(LAYOUT_QUERY, {
+   const layout = await context.storefront.query<LayoutData>(LAYOUT_QUERY, {
       variables: {
          headerMenuHandle: "main-menu",
          footerMenuHandle: "footer"
