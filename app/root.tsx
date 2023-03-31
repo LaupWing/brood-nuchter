@@ -75,9 +75,21 @@ const LAYOUT_QUERY = `#graphql
       }
       headerMenu: menu(handle: $headerMenuHandle) {
          id
+         items {
+            ...MenuItem
+            items {
+               ...MenuItem
+            }
+         }
       }
       footerMenu: menu(handle: $footerMenuHandle) {
          id
+         items {
+            ...MenuItem
+            items {
+               ...MenuItem
+            }
+         }
       }
    }
 
