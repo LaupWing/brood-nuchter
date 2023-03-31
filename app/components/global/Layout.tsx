@@ -4,6 +4,7 @@ import { AiOutlineShop } from "react-icons/ai"
 import { useWindowScroll } from "react-use"
 import clsx from "clsx"
 import { LayoutData } from "~/root"
+import { MenuItem } from "@shopify/hydrogen/storefront-api-types"
 
 const nav_links = [
    {
@@ -29,11 +30,12 @@ interface LayoutProps extends PropsWithChildren {
 }
 
 export const Layout:FC<LayoutProps> = ({
-   children
+   children,
+   layout
 }) => {
    return (
       <div className="flex flex-col items-center">
-         <Header />
+         <Header menu={layout.headerMenu} />
          { children }
          {/* <div className="mx-auto w-full max-w-5xl">
          </div> */}
@@ -41,9 +43,14 @@ export const Layout:FC<LayoutProps> = ({
    )
 }
 
-const Header = () => {
+interface HeaderProps {
+   menu: MenuItem[]
+}
+const Header:FC<HeaderProps> = ({
+   menu
+}) => {
    const { y } = useWindowScroll()
-
+   
    return (
       <div className={clsx(
          "w-full flex flex-1 fixed top-0 z-[1000] duration-500",
@@ -60,12 +67,12 @@ const Header = () => {
 
             <nav className="flex space-x-10 items-center">
                <ul className="flex space-x-10">
-                  {nav_links.map((link, i) =>(
+                  {/* {menu.map((link, i) =>(
                      <li 
                         key={i}
                         className="tracking-tight"
-                     >{link.name}</li>
-                  ))}
+                     >{link.title}</li>
+                  ))} */}
                </ul>
                <AiOutlineShop size={30}/>
             </nav>
