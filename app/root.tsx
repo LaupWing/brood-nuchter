@@ -11,7 +11,7 @@ import {
    ScrollRestoration,
    useLoaderData,
 } from "@remix-run/react"
-import type { Shop } from "@shopify/hydrogen/storefront-api-types"
+import type { MenuItem, Shop } from "@shopify/hydrogen/storefront-api-types"
 import favicon from "../public/favicon.svg"
 import tailwind from "./styles/tailwind-build.css"
 import { Layout } from "~/components/global"
@@ -35,6 +35,10 @@ export const meta: MetaFunction = () => ({
    charset: "utf-8",
    viewport: "width=device-width,initial-scale=1",
 })
+
+export interface LayoutData {
+   headerMenu: MenuItem[]
+}
 
 export async function loader({ context }: LoaderArgs) {
    const layout = await context.storefront.query<{ shop: Shop }>(LAYOUT_QUERY, {

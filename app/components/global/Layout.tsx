@@ -1,3 +1,4 @@
+import type { MenuItem } from "@shopify/hydrogen/storefront-api-types"
 import { FC, PropsWithChildren } from "react"
 import { GiSlicedBread } from "react-icons/gi"
 import { AiOutlineShop } from "react-icons/ai"
