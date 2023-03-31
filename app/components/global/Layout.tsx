@@ -1,9 +1,9 @@
-import type { MenuItem } from "@shopify/hydrogen/storefront-api-types"
 import { FC, PropsWithChildren } from "react"
 import { GiSlicedBread } from "react-icons/gi"
 import { AiOutlineShop } from "react-icons/ai"
 import { useWindowScroll } from "react-use"
 import clsx from "clsx"
+import { LayoutData } from "~/root"
 
 const nav_links = [
    {
@@ -23,6 +23,10 @@ const nav_links = [
       to: "/contact"
    },
 ]
+
+interface LayoutProps extends PropsWithChildren {
+   layout: LayoutData
+}
 
 export const Layout:FC<PropsWithChildren> = ({
    children
