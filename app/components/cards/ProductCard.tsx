@@ -10,6 +10,7 @@ interface ProductCardProps {
 
 export const ProductCard:FC<ProductCardProps> = ({ product }) => {
    console.log(product)
+   
 
    return (
       <div className="bg-main-gray shadow-main-gray shadow rounded hover:bg-accent-fire/30 auto-rows-fr duration-200 p-4 text-main-light flex flex-col">

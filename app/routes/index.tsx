@@ -98,13 +98,24 @@ export const HOME_PAGE_FEATURED_PRODUCTS_QUERY = `#graphql
             id
             title
             handle
-            images(first:3){
-            nodes {
-               altText
-               width
-               url
-               width
-            }
+            variants(first: 1){
+               nodes {
+                  id
+                  image {
+                     url
+                     altText
+                     width
+                     height
+                  }
+                  price {
+                     amount
+                     currencyCode
+                  }
+                  compareAtPrice {
+                     amount
+                     currencyCode
+                  }
+               }
             }
          }
       }
