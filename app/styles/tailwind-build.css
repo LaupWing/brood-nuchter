@@ -499,6 +499,9 @@ video {
 .mt-4{
   margin-top: 1rem;
 }
+.mt-2{
+  margin-top: 0.5rem;
+}
 .flex{
   display: flex;
 }
@@ -507,6 +510,9 @@ video {
 }
 .aspect-\[4\/5\]{
   aspect-ratio: 4/5;
+}
+.aspect-\[6\/5\]{
+  aspect-ratio: 6/5;
 }
 .h-\[30\%\]{
   height: 30%;

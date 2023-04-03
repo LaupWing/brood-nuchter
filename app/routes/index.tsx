@@ -29,7 +29,6 @@ export const loader = ({ context }: LoaderArgs) => {
 
 export default function Index() {
    const { featuredProducts } = useLoaderData<typeof loader>()
-   console.log(featuredProducts)
 
    return (
       <>
@@ -74,7 +73,6 @@ export default function Index() {
             {featuredProducts && <Suspense>
                <Await resolve={featuredProducts}>
                   {({ products }) => {
-                     console.log(products)
                      return (
                         <section className="grid grid-cols-4 gap-4 py-10 auto-rows-auto">
                            {products.nodes.map(product => (
