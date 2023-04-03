@@ -9,6 +9,8 @@ import { BiFilter, BiSortDown } from "react-icons/bi"
 import { ProductCard } from "~/components/cards"
 import { LoaderArgs, defer } from "@shopify/remix-oxygen"
 import { ProductConnection } from "@shopify/hydrogen/storefront-api-types"
+import { Await, useLoaderData } from "@remix-run/react"
+import { Suspense } from "react"
 
 export const meta = () => {
    return {
@@ -26,7 +28,8 @@ export const loader = ({ context }: LoaderArgs) => {
 }
 
 export default function Index() {
-   
+   const { featuredProducts } = useLoaderData<typeof loader>()
+   console.log(featuredProducts)
 
    return (
       <>
@@ -68,14 +71,23 @@ export default function Index() {
                   Sort
                </button>
             </div>
-            <section className="grid grid-cols-4 gap-4 py-10 auto-rows-auto">
-               {data.map(bread => (
-                  <ProductCard 
-                     bread={bread}
-                     key={bread.id}
-                  />   
-               ))}
-            </section>
+            {featuredProducts && <Suspense>
+               <Await resolve={featuredProducts}>
+                  {({ products }) => {
+                     console.log(products)
+                     return (
+                        <section className="grid grid-cols-4 gap-4 py-10 auto-rows-auto">
+                           {data.map(bread => (
+                              <ProductCard 
+                                 bread={bread}
+                                 key={bread.id}
+                              />   
+                           ))}
+                        </section>
+                     )
+                  }}
+               </Await>
+            </Suspense>}
          </div>
       </>
    )
