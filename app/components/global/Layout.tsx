@@ -5,6 +5,7 @@ import { useWindowScroll } from "react-use"
 import clsx from "clsx"
 import { LayoutData } from "~/root"
 import { MenuItem } from "@shopify/hydrogen/storefront-api-types"
+import { BiMenuAltRight, BiSearchAlt } from "react-icons/bi"
 
 interface LayoutProps extends PropsWithChildren {
    layout: LayoutData
@@ -114,8 +115,19 @@ const Header:FC<{
 
 const HeaderMobile = () => {
    return (
-      <header>
-
+      <header className="fixed top-0 text-white justify-between z-[1000] backdrop-blur bg-main-dark/40 w-full flex p-2">
+         <BiMenuAltRight className="justify-start flex-1 mr-auto" size={30}/>
+         <div className="flex flex-1 items-center flex-grow w-full self-stretch justify-center">
+            <GiSlicedBread size={30} className="mr-1" />
+            <div className="flex flex-col font-serif leading-4 text-base">
+               <h1>Brood</h1>
+               <h1>Nuchter</h1>
+            </div>
+         </div>
+         <div className="flex flex-1 gap-1 items-center justify-end">
+            <AiOutlineShop size={24}/>
+            <BiSearchAlt size={24}/>
+         </div>
       </header>
    )
 }
