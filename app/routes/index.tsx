@@ -93,7 +93,7 @@ export default function Index() {
 
 export const HOME_PAGE_FEATURED_PRODUCTS_QUERY = `#graphql
    query FeaturedProducts {
-      products(first: 6) {
+      products(first: 8) {
          nodes {
             id
             title

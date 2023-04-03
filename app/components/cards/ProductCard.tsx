@@ -1,3 +1,4 @@
+import { Image, flattenConnection } from "@shopify/hydrogen"
 import { Product } from "@shopify/hydrogen/storefront-api-types"
 import { SerializeFrom } from "@shopify/remix-oxygen"
 import { FC } from "react"
@@ -9,15 +10,28 @@ interface ProductCardProps {
 }
 
 export const ProductCard:FC<ProductCardProps> = ({ product }) => {
-   console.log(product)
+   if(!product.variants.nodes.length){
+      return null
+   }
    
+   const firstVariant = flattenConnection(product.variants)[0]
+   console.log(firstVariant)
 
    return (
       <div className="bg-main-gray shadow-main-gray shadow rounded hover:bg-accent-fire/30 auto-rows-fr duration-200 p-4 text-main-light flex flex-col">
-         <div className="aspect-[6/5] relative mb-2">
-            <img 
-               src={tosti}
-               alt="" 
+         <div className="aspect-[6/5] relative mb-3 m-2">
+            <Image 
+               data={firstVariant.image!}
+               widths={[320]}
+               sizes="320px"
+               loaderOptions={{
+                  crop: "center",
+                  scale: 2,
+                  width: 320,
+                  height: 400
+               }}
+               alt={firstVariant.image?.altText || "Product image"} 
+               loading="eager"
                className="h-full w-full object-cover absolute inset-0"
             />
             <div className="absolute bottom-0 right-0">
