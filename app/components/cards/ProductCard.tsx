@@ -1,4 +1,4 @@
-import { Image, flattenConnection } from "@shopify/hydrogen"
+import { Image, Money, flattenConnection } from "@shopify/hydrogen"
 import { Product } from "@shopify/hydrogen/storefront-api-types"
 import { SerializeFrom } from "@shopify/remix-oxygen"
 import { FC } from "react"
@@ -19,7 +19,7 @@ export const ProductCard:FC<ProductCardProps> = ({ product }) => {
 
    return (
       <div className="bg-main-gray shadow-main-gray shadow rounded hover:bg-accent-fire/30 auto-rows-fr duration-200 p-4 text-main-light flex flex-col">
-         <div className="aspect-[6/5] relative mb-3 m-2">
+         <div className="aspect-[6/5] relative mb-3">
             <Image 
                data={firstVariant.image!}
                widths={[320]}
@@ -42,7 +42,11 @@ export const ProductCard:FC<ProductCardProps> = ({ product }) => {
          </div>
          <div className="flex flex-col flex-1 space-y-4">
             <div className="flex justify-between font-serif mb-auto">
-               {/* <p>$ {product.}</p> */}
+               <Money 
+                  className="text-2xl" 
+                  withoutTrailingZeros 
+                  data={firstVariant.price!} 
+               />
                <p>50 gram</p>
             </div>
             <div className="flex flex-col justify-between flex-1">
