@@ -50,7 +50,7 @@ export const ProductCard:FC<ProductCardProps> = ({ product }) => {
                <p>50 gram</p>
             </div>
             <div className="flex flex-col justify-between flex-1">
-               <h2 className="font-bold font-serif tracking-wider text-xl">{product.title}</h2>
+               <h2 className="font-bold font-serif tracking-wider text-lg">{product.title}</h2>
                <button className="bg-accent-fire ml-auto mt-2 text-xs text-main-dark font-bold rounded px-2 py-1">Toevoegen</button>
             </div>
          </div>
