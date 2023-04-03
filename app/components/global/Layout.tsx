@@ -24,20 +24,30 @@ export const Layout:FC<LayoutProps> = ({
    )
 }
 
-interface HeaderProps {
-   menu: MenuItem[]
+const Footer = () =>{
+   return (
+      <footer>
+         <div>
+            
+         </div>
+      </footer>
+   )
 }
-const Header:FC<HeaderProps> = ({
+
+
+const Header:FC<{
+   menu: MenuItem[]
+}> = ({
    menu
 }) => {
    const { y } = useWindowScroll()
    
    return (
-      <div className={clsx(
+      <header className={clsx(
          "w-full flex flex-1 fixed top-0 z-[1000] duration-500",
          y > 50 && "backdrop-blur bg-main-dark/40"
       )}>
-         <header className="container flex items-center justify-between mx-auto text-white py-4">
+         <div className="container flex items-center justify-between mx-auto text-white py-4">
             <div className="flex items-center">
                <GiSlicedBread size={40} className="mr-1" />
                <div className="flex flex-col font-serif leading-4 text-lg">
@@ -57,7 +67,7 @@ const Header:FC<HeaderProps> = ({
                </ul>
                <AiOutlineShop size={30}/>
             </nav>
-         </header>
-      </div>
+         </div>
+      </header>
    )
 }
