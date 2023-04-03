@@ -77,10 +77,10 @@ export default function Index() {
                      console.log(products)
                      return (
                         <section className="grid grid-cols-4 gap-4 py-10 auto-rows-auto">
-                           {data.map(bread => (
+                           {products.nodes.map(product => (
                               <ProductCard 
-                                 bread={bread}
-                                 key={bread.id}
+                                 product={product}
+                                 key={product.id}
                               />   
                            ))}
                         </section>

@@ -1,12 +1,16 @@
+import { Product } from "@shopify/hydrogen/storefront-api-types"
+import { SerializeFrom } from "@shopify/remix-oxygen"
 import { FC } from "react"
 import { AiOutlineInfoCircle } from "react-icons/ai"
 import tosti from "~/images/products/tosti.png"
 
 interface ProductCardProps {
-   bread: BreadType
+   product: SerializeFrom<Product> 
 }
 
-export const ProductCard:FC<ProductCardProps> = ({ bread }) => {
+export const ProductCard:FC<ProductCardProps> = ({ product }) => {
+   console.log(product)
+
    return (
       <div className="aspect-[4/5] bg-main-gray shadow-main-gray shadow rounded hover:bg-accent-fire/30 auto-rows-fr duration-200 p-4 text-main-light flex flex-col">
          <div className="h-[65%] relative mb-2">
@@ -23,11 +27,11 @@ export const ProductCard:FC<ProductCardProps> = ({ bread }) => {
          </div>
          <div className="flex flex-col flex-1 space-y-4">
             <div className="flex justify-between font-serif mb-auto">
-               <p>$ {bread.price}</p>
-               <p>{bread.weight} gram</p>
+               {/* <p>$ {product.}</p> */}
+               <p>500 gram</p>
             </div>
             <div className="flex items-end justify-between">
-               <h2 className="font-bold font-serif tracking-wider text-xl">{bread.name}</h2>
+               {/* <h2 className="font-bold font-serif tracking-wider text-xl">{bread.name}</h2> */}
                <button className="bg-accent-fire text-xs text-main-dark font-bold rounded px-2 py-1">Toevoegen</button>
             </div>
          </div>
