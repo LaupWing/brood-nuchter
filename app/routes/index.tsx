@@ -4,7 +4,6 @@ import {
    AiOutlineFieldTime 
 } from "react-icons/ai"
 import image from "~/images/bread.jpg"
-import data from "../dummy/data.json"
 import { BiFilter, BiSortDown } from "react-icons/bi"
 import { ProductCard } from "~/components/cards"
 import { LoaderArgs, defer } from "@shopify/remix-oxygen"
@@ -32,7 +31,7 @@ export default function Index() {
 
    return (
       <>
-         <div className="h-screen relative w-full inset-0 flex flex-col">
+         <div className="h-screen relative px-6 w-full inset-0 flex flex-col">
             <div className="absolute inset-0 bg-main-dark/60 z-50"/>
             <div className="z-50 my-auto container mx-auto flex justify-between">
                <div className="font-serif max-w-xs flex flex-col">
@@ -54,7 +53,7 @@ export default function Index() {
             />
             <div className="h-[30%] bg-gradient-to-b from-main-dark/0 to-main-dark absolute w-full bottom-0 left-0"/>
          </div>
-         <div className="container py-10">
+         {/* <div className="container py-10">
             <div className="flex justify-between mb-10 items-center text-accent-fire">
                <h2 className="text-2xl font-serif">Klant favorietes</h2>
                <div className="text-xs flex items-center text-accent-bread">
@@ -86,7 +85,7 @@ export default function Index() {
                   }}
                </Await>
             </Suspense>}
-         </div>
+         </div> */}
       </>
    )
 }
