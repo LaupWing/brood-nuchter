@@ -100,6 +100,7 @@ export const HOME_PAGE_FEATURED_PRODUCTS_QUERY = `#graphql
             handle
             variants(first: 1){
                nodes {
+                  weight
                   id
                   image {
                      url

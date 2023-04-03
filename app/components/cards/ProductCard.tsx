@@ -3,7 +3,6 @@ import { Product } from "@shopify/hydrogen/storefront-api-types"
 import { SerializeFrom } from "@shopify/remix-oxygen"
 import { FC } from "react"
 import { AiOutlineInfoCircle } from "react-icons/ai"
-import tosti from "~/images/products/tosti.png"
 
 interface ProductCardProps {
    product: SerializeFrom<Product> 
@@ -15,7 +14,6 @@ export const ProductCard:FC<ProductCardProps> = ({ product }) => {
    }
    
    const firstVariant = flattenConnection(product.variants)[0]
-   console.log(firstVariant)
 
    return (
       <div className="bg-main-gray shadow-main-gray shadow rounded hover:bg-accent-fire/30 auto-rows-fr duration-200 p-4 text-main-light flex flex-col">
@@ -47,7 +45,7 @@ export const ProductCard:FC<ProductCardProps> = ({ product }) => {
                   withoutTrailingZeros 
                   data={firstVariant.price!} 
                />
-               <p>50 gram</p>
+               <p>{firstVariant.weight} gram</p>
             </div>
             <div className="flex flex-col justify-between flex-1">
                <h2 className="font-bold font-serif tracking-wider text-lg">{product.title}</h2>
