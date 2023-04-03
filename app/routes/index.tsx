@@ -1,8 +1,14 @@
-import { AiFillFacebook, AiFillInstagram, AiOutlineFieldTime, AiOutlineInfoCircle } from "react-icons/ai"
+import { 
+   AiFillFacebook, 
+   AiFillInstagram, 
+   AiOutlineFieldTime 
+} from "react-icons/ai"
 import image from "~/images/bread.jpg"
 import data from "../dummy/data.json"
 import { BiFilter, BiSortDown } from "react-icons/bi"
 import { ProductCard } from "~/components/cards"
+import { LoaderArgs, defer } from "@shopify/remix-oxygen"
+import { ProductConnection } from "@shopify/hydrogen/storefront-api-types"
 
 export const meta = () => {
    return {
@@ -11,7 +17,17 @@ export const meta = () => {
    }
 }
 
+export const loader = ({ context }: LoaderArgs) => {
+   return defer({
+      featuredProducts: context.storefront.query<{
+         products: ProductConnection
+      }>(HOME_PAGE_FEATURED_PRODUCTS_QUERY)
+   })
+}
+
 export default function Index() {
+   
+
    return (
       <>
          <div className="h-screen relative w-full inset-0 flex flex-col">
@@ -65,6 +81,22 @@ export default function Index() {
    )
 }
 
-// export const HOME_PAGE_FEATURED_PRODUCTS_QUERY = `#graphql
-
-// `
+export const HOME_PAGE_FEATURED_PRODUCTS_QUERY = `#graphql
+   query FeaturedProducts {
+      products(first: 6) {
+         nodes {
+            id
+            title
+            handle
+            images(first:3){
+            nodes {
+               altText
+               width
+               url
+               width
+            }
+            }
+         }
+      }
+   }
+`
