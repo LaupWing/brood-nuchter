@@ -18,17 +18,56 @@ export const Layout:FC<LayoutProps> = ({
       <div className="flex flex-col items-center">
          <Header menu={layout.headerMenu.items} />
          { children }
-         {/* <div className="mx-auto w-full max-w-5xl">
-         </div> */}
+         <Footer />
       </div>
    )
 }
 
 const Footer = () =>{
    return (
-      <footer>
-         <div>
-            
+      <footer className="flex w-full py-14">
+         <div className="flex container mx-auto justify-between items-start">
+            <div className="flex space-x-16">
+               <div className="text-white">
+                  <h3 className="font-serif text-xl">Follow</h3>
+                  <ul className="text-xs mt-4 tracking-wider gap-1 flex flex-col">
+                     <li>Instagram</li>
+                     <li>Facebook</li>
+                  </ul>
+               </div>
+               <div className="text-white">
+                  <h3 className="font-serif text-xl">Contact</h3>
+                  <ul className="text-xs mt-4 tracking-wider gap-1 flex flex-col">
+                     <li>06123456</li>
+                     <li>hanyo@denhoed.com</li>
+                  </ul>
+               </div>
+            </div>
+
+            <div className="flex items-center text-white">
+               <GiSlicedBread size={50} className="mr-2" />
+               <div className="flex flex-col font-serif leading-5 text-2xl">
+                  <h1>Brood</h1>
+                  <h1>Nuchter</h1>
+               </div>
+            </div>
+
+            <div className="flex space-x-16">
+               <div className="text-white">
+                  <h3 className="font-serif text-xl">BroodNuchter</h3>
+                  <ul className="text-xs mt-4 tracking-wider gap-1 flex flex-col">
+                     <li>1852XX, Heiloo</li>
+                     <li>Vrieswijk 32</li>
+                     <li>KVK: 12345676</li>
+                  </ul>
+               </div>
+               <div className="text-white">
+                  <h3 className="font-serif text-xl">Locations</h3>
+                  <ul className="text-xs mt-4 tracking-wider gap-1 flex flex-col">
+                     <li>Find locations</li>
+                  </ul>
+               </div>
+            </div>
          </div>
       </footer>
    )
