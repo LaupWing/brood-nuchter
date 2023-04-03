@@ -6,25 +6,6 @@ import clsx from "clsx"
 import { LayoutData } from "~/root"
 import { MenuItem } from "@shopify/hydrogen/storefront-api-types"
 
-const nav_links = [
-   {
-      name: "Home",
-      to: "/home"
-   },
-   {
-      name: "About",
-      to: "/about"
-   },
-   {
-      name: "Products",
-      to: "/products"
-   },
-   {
-      name: "Contact",
-      to: "/contact"
-   },
-]
-
 interface LayoutProps extends PropsWithChildren {
    layout: LayoutData
 }
@@ -35,7 +16,7 @@ export const Layout:FC<LayoutProps> = ({
 }) => {
    return (
       <div className="flex flex-col items-center">
-         {/* <Header menu={layout.headerMenu} /> */}
+         <Header menu={layout.headerMenu.items} />
          { children }
          {/* <div className="mx-auto w-full max-w-5xl">
          </div> */}
@@ -67,12 +48,12 @@ const Header:FC<HeaderProps> = ({
 
             <nav className="flex space-x-10 items-center">
                <ul className="flex space-x-10">
-                  {/* {menu.map((link, i) =>(
+                  {menu.map((link, i) =>(
                      <li 
                         key={i}
                         className="tracking-tight"
                      >{link.title}</li>
-                  ))} */}
+                  ))}
                </ul>
                <AiOutlineShop size={30}/>
             </nav>
