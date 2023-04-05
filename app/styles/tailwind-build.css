@@ -512,6 +512,9 @@ video {
 .grid{
   display: grid;
 }
+.hidden{
+  display: none;
+}
 .aspect-\[6\/5\]{
   aspect-ratio: 6/5;
 }

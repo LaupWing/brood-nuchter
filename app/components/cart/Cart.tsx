@@ -14,6 +14,8 @@ export const Cart:FC<{
    const linesCount = Boolean(cart?.lines?.edges?.length || 0)
 
    return (
-      <>index</>
+      <>
+         
+      </>
    )
 }
