@@ -1,5 +1,6 @@
+import { useFetcher } from "@remix-run/react"
 import { ProductSortKeys } from "@shopify/hydrogen/storefront-api-types"
-import { FC } from "react"
+import { FC, useMemo } from "react"
 
 type LayoutType = "drawer" | "page"
 
@@ -22,6 +23,15 @@ export const FeaturedProducts:FC<FeaturedProductsProps> = ({
    reverse,
    sortKey = "BEST_SELLING"
 }) => {
+   const { load, data } = useFetcher()
+   const queryString = useMemo(
+      () => 
+         ""
+         // Object.entries({count, sortKey, query, reverse})
+         //    .map([key, val] => (val ? `` : null))
+         //    .join("")
+   , [count, sortKey, query, reverse])
+
    return (
       <div>FeaturedProducts</div>
    )
