@@ -53,7 +53,7 @@ export default function Index() {
             />
             <div className="h-[30%] bg-gradient-to-b from-main-dark/0 to-main-dark absolute w-full bottom-0 left-0"/>
          </div>
-         {/* <div className="container py-10">
+         <div className="container py-10">
             <div className="flex justify-between mb-10 items-center text-accent-fire">
                <h2 className="text-2xl font-serif">Klant favorietes</h2>
                <div className="text-xs flex items-center text-accent-bread">
@@ -85,7 +85,7 @@ export default function Index() {
                   }}
                </Await>
             </Suspense>}
-         </div> */}
+         </div>
       </>
    )
 }
