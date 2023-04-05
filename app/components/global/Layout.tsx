@@ -17,8 +17,8 @@ export const Layout:FC<LayoutProps> = ({
 }) => {
    return (
       <div className="flex flex-col items-center">
-         {/* <Header menu={layout.headerMenu.items} /> */}
-         <HeaderMobile />
+         <Header menu={layout.headerMenu.items} />
+         {/* <HeaderMobile /> */}
          { children }
          {/* <Footer /> */}
       </div>
