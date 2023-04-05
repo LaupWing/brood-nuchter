@@ -2,7 +2,7 @@ import { Image, Money, flattenConnection } from "@shopify/hydrogen"
 import { Product } from "@shopify/hydrogen/storefront-api-types"
 import { SerializeFrom } from "@shopify/remix-oxygen"
 import { FC } from "react"
-import { AiOutlineInfoCircle } from "react-icons/ai"
+import { IconInfo } from "../elements/Icons"
 
 interface ProductCardProps {
    product: SerializeFrom<Product> 
@@ -33,7 +33,7 @@ export const ProductCard:FC<ProductCardProps> = ({ product }) => {
                className="h-full w-full object-cover absolute inset-0"
             />
             <div className="absolute bottom-0 right-0">
-               <AiOutlineInfoCircle
+               <IconInfo
                   size={30} 
                />
             </div>
