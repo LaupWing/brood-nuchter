@@ -3,6 +3,7 @@ import {
    type MetaFunction,
    type LoaderArgs,
    defer,
+   AppLoadContext,
 } from "@shopify/remix-oxygen"
 import {
    Links,
@@ -12,10 +13,11 @@ import {
    ScrollRestoration,
    useLoaderData,
 } from "@remix-run/react"
-import type { Shop, Menu } from "@shopify/hydrogen/storefront-api-types"
+import type { Shop, Menu, Cart } from "@shopify/hydrogen/storefront-api-types"
 import favicon from "../public/favicon.svg"
 import tailwind from "./styles/tailwind-build.css"
 import { Layout } from "~/components/global"
+import invariant from "tiny-invariant"
 
 export const links: LinksFunction = () => {
    return [
@@ -117,6 +119,19 @@ const LAYOUT_QUERY = `#graphql
       url
    }
 `
+
+
+export const getCart = async ({ storefront }: AppLoadContext, cartId: string) => {
+   invariant(storefront, "Missing storefront client in cart query")
+   const { cart } = await storefront.query<{cart?: Cart}>(CART_QUERY, {
+      variables: {
+         cartId
+      },
+      cache: storefront.CacheNone()
+   })
+
+   return cart
+}
 
 export const CART_QUERY = `#graphql
    query CartQuery($cartId: ID!){
