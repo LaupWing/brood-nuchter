@@ -25,7 +25,7 @@ export const CartEmpty:FC<{
          className={container[layout]}
       >
          <section className="grid gap-6">
-
+            Empty
          </section>
       </div>
    )

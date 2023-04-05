@@ -108,7 +108,9 @@ const CartDrawer:FC<{
          heading="Cart"
          openFrom="right"
       >
-
+         <div className="grid">
+            
+         </div>
       </Drawer>
    )
 }
