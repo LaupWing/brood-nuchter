@@ -52,11 +52,13 @@ export async function loader({ context }: LoaderArgs) {
          footerMenuHandle: "footer"
       }
    })
+   const cartId = await context.session.get("cartId")
    
    return defer({ layout: {
       shop: data.shop!,
       headerMenu: data.headerMenu!,
-      footerMenu: data.footerMenu!
+      footerMenu: data.footerMenu!,
+      cart: cartId ? getCart(context, cartId) : undefined
    } })
 }
 

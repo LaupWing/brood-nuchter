@@ -32,7 +32,7 @@ export const Drawer = ({
       >
          <Dialog 
             as="div" 
-            className={"relative z-50"} 
+            className={"relative z-[100000]"} 
             onClose={onClose}
          >
             <Transition.Child
@@ -70,7 +70,7 @@ export const Drawer = ({
                            >
                               {heading !== null && (
                                  <Dialog.Title>
-                                    <span>{heading}</span>
+                                    <span className="text-2xl font-serif">{heading}</span>
                                  </Dialog.Title>
                               )}
                               <button

@@ -7,8 +7,8 @@ import { LayoutData } from "~/root"
 import { MenuItem } from "@shopify/hydrogen/storefront-api-types"
 import { BiMenuAltRight, BiSearchAlt } from "react-icons/bi"
 import { Drawer, useDrawer } from "~/components/global"
-import { CartLoading } from "~/components/cart"
-import { useMatches } from "@remix-run/react"
+import { Cart, CartLoading } from "~/components/cart"
+import { Await, useMatches } from "@remix-run/react"
 
 interface LayoutProps extends PropsWithChildren {
    layout: LayoutData
@@ -111,7 +111,6 @@ const CartDrawer:FC<{
    onClose
 }) => {
    const [root] = useMatches()
-   console.log(root)
 
    return (
       <Drawer 
@@ -122,7 +121,15 @@ const CartDrawer:FC<{
       >
          <div className="grid">
             <Suspense fallback={<CartLoading />}>
-
+               <Await resolve={root.data?.cart}>
+                  {(cart) => (
+                     <Cart 
+                        layout="drawer"
+                        onClose={onClose}
+                        cart={cart}
+                     />
+                  )}
+               </Await>
             </Suspense>
          </div>
       </Drawer>
