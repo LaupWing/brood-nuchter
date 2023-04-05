@@ -6,6 +6,7 @@ import clsx from "clsx"
 import { LayoutData } from "~/root"
 import { MenuItem } from "@shopify/hydrogen/storefront-api-types"
 import { BiMenuAltRight, BiSearchAlt } from "react-icons/bi"
+import { useDrawer } from "~/components/global"
 
 interface LayoutProps extends PropsWithChildren {
    layout: LayoutData
@@ -82,7 +83,12 @@ const Header:FC<{
    menu
 }) => {
    const { y } = useWindowScroll()
-   
+   const {
+      isOpen: isCartOpen,
+      openDrawer: openCart,
+      closeDrawer: closeCart
+   } = useDrawer()
+
    return (
       <header className={clsx(
          "w-full flex flex-1 fixed top-0 z-[1000] duration-500",
@@ -106,7 +112,7 @@ const Header:FC<{
                      >{link.title}</li>
                   ))}
                </ul>
-               <AiOutlineShop size={30}/>
+               <AiOutlineShop className="cursor-pointer" size={30}/>
             </nav>
          </div>
       </header>
