@@ -1,6 +1,7 @@
+import type { ReactNode } from "react"
 import { Transition, Dialog } from "@headlessui/react"
 import clsx from "clsx"
-import { ReactNode, Fragment, useState } from "react"
+import { Fragment, useState } from "react"
 import { AiOutlineClose } from "react-icons/ai"
 
 interface DrawerProps {
