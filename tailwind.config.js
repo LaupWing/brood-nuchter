@@ -18,7 +18,8 @@ module.exports = {
             nav: "var(--height-nav)"
          },
          height: {
-            "minus-nav": "calc(100vh - var(--height-nav))"
+            "minus-nav": "calc(100vh - var(--height-nav))",
+            "screen-dynamic": "var(--screen-height-dynamic, 100vh)"
          }
       },
       fontFamily: {

@@ -5,6 +5,7 @@
 
 :root {
    --height-nav: 3rem;
+   --screen-height-dynamic: 100vh;
 
    @media (min-width: 32em) {
       --height-nav: 4rem;

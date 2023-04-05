@@ -61,26 +61,28 @@ export const Drawer = ({
                         leaveFrom="translate-x-0"
                         leaveTo={offscreen[openFrom]}
                      >
-                        <header
-                           className={clsx(
-                              "stick top-0 flex items-center px-6 h-nav sm:px-8 md:px-12",
-                              heading ? "justify-between" : "justify-end"
-                           )}
-                        >
-                           {heading !== null && (
-                              <Dialog.Title>
-                                 <span>{heading}</span>
-                              </Dialog.Title>
-                           )}
-                           <button
-                              type="button"
-                              className=""
-                              onClick={onClose}
+                        <Dialog.Panel className="w-screen max-w-lg text-left align-middle transition-all transform shadow-xl h-screen-dynamic">
+                           <header
+                              className={clsx(
+                                 "stick top-0 flex items-center px-6 h-nav sm:px-8 md:px-12",
+                                 heading ? "justify-between" : "justify-end"
+                              )}
                            >
-                              <AiOutlineClose/>
-                           </button>
-                        </header>
-                        {children}
+                              {heading !== null && (
+                                 <Dialog.Title>
+                                    <span>{heading}</span>
+                                 </Dialog.Title>
+                              )}
+                              <button
+                                 type="button"
+                                 className=""
+                                 onClick={onClose}
+                              >
+                                 <AiOutlineClose/>
+                              </button>
+                           </header>
+                           {children}
+                        </Dialog.Panel>
                      </Transition.Child>
                   </div>
                </div>
