@@ -1,6 +1,7 @@
 import { Transition, Dialog } from "@headlessui/react"
 import clsx from "clsx"
-import { FC, ReactNode, Fragment } from "react"
+import { FC, ReactNode, Fragment, useState } from "react"
+import { AiOutlineClose } from "react-icons/ai"
 
 interface DrawerProps {
    heading?: string
@@ -10,13 +11,13 @@ interface DrawerProps {
    children: ReactNode
 }
 
-export const Drawer:FC<DrawerProps> = ({
+export const Drawer = ({
    heading,
    open,
    openFrom = "right",
    onClose,
    children
-}) => {
+}: DrawerProps) => {
    const offscreen = {
       right: "translate-x-full",
       left: "-translate-x-full",
@@ -75,7 +76,7 @@ export const Drawer:FC<DrawerProps> = ({
                               className=""
                               onClick={onClose}
                            >
-
+                              <AiOutlineClose/>
                            </button>
                         </header>
                      </Transition.Child>
@@ -85,4 +86,24 @@ export const Drawer:FC<DrawerProps> = ({
          </Dialog>
       </Transition>
    )
+}
+
+Drawer.Title = Dialog.Title
+
+export const useDrawer = (openDefault = false) => {
+   const [isOpen, setIsOpen] = useState(openDefault)
+
+   function openDrawer(){
+      setIsOpen(true)
+   }
+
+   function closeDrawer(){
+      setIsOpen(false)
+   }
+
+   return {
+      isOpen,
+      openDrawer,
+      closeDrawer
+   }
 }
