@@ -1,13 +1,13 @@
 import { Transition, Dialog } from "@headlessui/react"
 import clsx from "clsx"
-import { FC, ReactNode, Fragment, useState } from "react"
+import { ReactNode, Fragment, useState } from "react"
 import { AiOutlineClose } from "react-icons/ai"
 
 interface DrawerProps {
    heading?: string
    open: boolean
    onClose: () => void
-   openFrom: "right" | "left"
+   openFrom?: "right" | "left"
    children: ReactNode
 }
 
@@ -79,6 +79,7 @@ export const Drawer = ({
                               <AiOutlineClose/>
                            </button>
                         </header>
+                        {children}
                      </Transition.Child>
                   </div>
                </div>

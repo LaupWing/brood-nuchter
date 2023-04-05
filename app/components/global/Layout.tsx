@@ -6,7 +6,7 @@ import clsx from "clsx"
 import { LayoutData } from "~/root"
 import { MenuItem } from "@shopify/hydrogen/storefront-api-types"
 import { BiMenuAltRight, BiSearchAlt } from "react-icons/bi"
-import { useDrawer } from "~/components/global"
+import { Drawer, useDrawer } from "~/components/global"
 
 interface LayoutProps extends PropsWithChildren {
    layout: LayoutData
@@ -19,9 +19,8 @@ export const Layout:FC<LayoutProps> = ({
    return (
       <div className="flex flex-col items-center">
          <Header menu={layout.headerMenu.items} />
-         {/* <HeaderMobile /> */}
          { children }
-         {/* <Footer /> */}
+         <Footer />
       </div>
    )
 }
@@ -82,13 +81,44 @@ const Header:FC<{
 }> = ({
    menu
 }) => {
-   const { y } = useWindowScroll()
    const {
       isOpen: isCartOpen,
       openDrawer: openCart,
       closeDrawer: closeCart
    } = useDrawer()
 
+   return (
+      <>
+         <HeaderDesktop menu={menu} />
+      </>
+   )
+}
+
+const CartDrawer:FC<{
+   isOpen: boolean
+   onClose: () => void
+}> = ({
+   isOpen,
+   onClose
+}) => {
+   return (
+      <Drawer 
+         open={isOpen}
+         onClose={onClose}
+         heading="Cart"
+         openFrom="right"
+      >
+
+      </Drawer>
+   )
+}
+
+const HeaderDesktop:FC<{
+   menu: MenuItem[]
+}> = ({
+   menu
+}) => {
+   const { y } = useWindowScroll()
    return (
       <header className={clsx(
          "w-full flex flex-1 fixed top-0 z-[1000] duration-500",
