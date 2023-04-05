@@ -536,6 +536,9 @@ video {
 .h-screen-dynamic{
   height: var(--screen-height-dynamic, 100vh);
 }
+.h-20{
+  height: 5rem;
+}
 .w-24{
   width: 6rem;
 }
@@ -622,6 +625,9 @@ video {
 }
 .gap-6{
   gap: 1.5rem;
+}
+.gap-8{
+  gap: 2rem;
 }
 .space-x-10 > :not([hidden]) ~ :not([hidden]){
   --tw-space-x-reverse: 0;

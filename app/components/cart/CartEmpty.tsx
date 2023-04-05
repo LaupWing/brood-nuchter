@@ -27,6 +27,9 @@ export const CartEmpty:FC<{
          <section className="grid gap-6">
             Empty
          </section>
+         <section className="grid gap-8">
+            
+         </section>
       </div>
    )
 }

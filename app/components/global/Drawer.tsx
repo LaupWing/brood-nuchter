@@ -64,7 +64,7 @@ export const Drawer = ({
                         <Dialog.Panel className="w-screen max-w-lg text-left align-middle transition-all transform shadow-xl h-screen-dynamic bg-white">
                            <header
                               className={clsx(
-                                 "stick top-0 flex items-center px-6 h-nav sm:px-8 md:px-12",
+                                 "stick top-0 flex items-center h-20 px-6 sm:px-8 md:px-12",
                                  heading ? "justify-between" : "justify-end"
                               )}
                            >
