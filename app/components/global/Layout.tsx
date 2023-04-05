@@ -1,4 +1,4 @@
-import { FC, PropsWithChildren } from "react"
+import { FC, PropsWithChildren, Suspense } from "react"
 import { GiSlicedBread } from "react-icons/gi"
 import { AiOutlineShop } from "react-icons/ai"
 import { useWindowScroll } from "react-use"
@@ -7,6 +7,8 @@ import { LayoutData } from "~/root"
 import { MenuItem } from "@shopify/hydrogen/storefront-api-types"
 import { BiMenuAltRight, BiSearchAlt } from "react-icons/bi"
 import { Drawer, useDrawer } from "~/components/global"
+import { CartLoading } from "~/components/cart"
+import { useMatches } from "@remix-run/react"
 
 interface LayoutProps extends PropsWithChildren {
    layout: LayoutData
@@ -89,7 +91,14 @@ const Header:FC<{
 
    return (
       <>
-         <HeaderDesktop menu={menu} />
+         <CartDrawer 
+            isOpen={isCartOpen}
+            onClose={closeCart}
+         />
+         <HeaderDesktop 
+            menu={menu} 
+            openCart={openCart}
+         />
       </>
    )
 }
@@ -101,6 +110,9 @@ const CartDrawer:FC<{
    isOpen,
    onClose
 }) => {
+   const [root] = useMatches()
+   console.log(root)
+
    return (
       <Drawer 
          open={isOpen}
@@ -109,7 +121,9 @@ const CartDrawer:FC<{
          openFrom="right"
       >
          <div className="grid">
-            
+            <Suspense fallback={<CartLoading />}>
+
+            </Suspense>
          </div>
       </Drawer>
    )
@@ -117,8 +131,10 @@ const CartDrawer:FC<{
 
 const HeaderDesktop:FC<{
    menu: MenuItem[]
+   openCart: () => void
 }> = ({
-   menu
+   menu,
+   openCart
 }) => {
    const { y } = useWindowScroll()
    return (
@@ -144,7 +160,11 @@ const HeaderDesktop:FC<{
                      >{link.title}</li>
                   ))}
                </ul>
-               <AiOutlineShop className="cursor-pointer" size={30}/>
+               <AiOutlineShop 
+                  className="cursor-pointer" 
+                  size={30}
+                  onClick={openCart}
+               />
             </nav>
          </div>
       </header>
