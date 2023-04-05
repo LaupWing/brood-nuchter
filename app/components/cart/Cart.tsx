@@ -1,5 +1,6 @@
 import type { FC } from "react"
 import type { Cart as CartType } from "@shopify/hydrogen/storefront-api-types"
+import { CartEmpty } from "./CartEmpty"
 export type CartLayoutsType = "page" | "drawer"
 
 export const Cart:FC<{
@@ -15,7 +16,11 @@ export const Cart:FC<{
 
    return (
       <>
-         
+         <CartEmpty 
+            hidden={linesCount}
+            onClose={onClose}
+            layout={layout}
+         />
       </>
    )
 }
