@@ -1,6 +1,7 @@
 import clsx from "clsx"
 import { FC } from "react"
 import { CartLayoutsType } from "./Cart"
+import { FeaturedProducts } from "../sections"
 
 export const CartEmpty:FC<{
    hidden: boolean
@@ -28,7 +29,13 @@ export const CartEmpty:FC<{
             Empty
          </section>
          <section className="grid gap-8">
-            
+            <FeaturedProducts 
+               count={4}
+               heading="Shop Best Sellers"
+               layout={layout}
+               onClose={onClose}
+               sortKey="BEST_SELLING"
+            />
          </section>
       </div>
    )
