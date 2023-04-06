@@ -2,6 +2,7 @@ import { useFetcher } from "@remix-run/react"
 import { Product, ProductSortKeys } from "@shopify/hydrogen/storefront-api-types"
 import { FC, useEffect, useMemo, useId } from "react"
 import { Skeleton } from "../elements"
+import clsx from "clsx"
 
 type LayoutType = "drawer" | "page"
 
@@ -36,11 +37,17 @@ export const FeaturedProducts:FC<FeaturedProductsProps> = ({
       load(`/api/products?${queryString}`)
    }, [load, queryString])
 
-   console.log(data)
+   const styles = clsx([
+      "grid grid-cols-2 gap-x-6 gap-y-8",
+      layout === "page" ? "md:grid-cols-4 sm:grid-cols-4" : ""
+   ])
+
    return (
       <>
-         FeaturedProducts
-         <div className="grid-cols-4 grid">
+         <h2 className="uppercase font-bold text-sm opacity-80">
+            {heading}
+         </h2>
+         <div className={styles}>
             <FeaturedProductsContent 
                count={count}
                onClick={onClose}
@@ -61,7 +68,7 @@ const FeaturedProductsContent:FC<{
    products
 }) => {
    const id = useId()
-
+   
    return (
       <>
          {[...new Array(count)].map((_, i) => (
@@ -70,6 +77,7 @@ const FeaturedProductsContent:FC<{
                className="grid gap-2"
             >
                <Skeleton className="aspect-[3/4]" />
+               <Skeleton className="w-32 h-4" />
             </div>
          ))}
       </>
