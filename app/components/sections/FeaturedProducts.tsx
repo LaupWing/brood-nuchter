@@ -35,6 +35,7 @@ export const FeaturedProducts:FC<FeaturedProductsProps> = ({
       load(`/api/products?${queryString}`)
    }, [load, queryString])
 
+   console.log(data)
    return (
       <div>FeaturedProducts</div>
    )

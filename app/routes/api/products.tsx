@@ -1,4 +1,7 @@
-import { LoaderArgs } from "@shopify/remix-oxygen"
+import { flattenConnection } from "@shopify/hydrogen"
+import { ProductConnection } from "@shopify/hydrogen/storefront-api-types"
+import { LoaderArgs, json } from "@shopify/remix-oxygen"
+import invariant from "tiny-invariant"
 
 export const loader = async ({request, context: { storefront }}: LoaderArgs) => {
    const url = new URL(request.url)
@@ -23,7 +26,22 @@ export const loader = async ({request, context: { storefront }}: LoaderArgs) => 
       }
    }catch(_){}
 
-   return null
+   const { products } = await storefront.query<{
+      products: ProductConnection
+   }>(PRODUCTS_QUERY, {
+      variables: {
+         count,
+         query,
+         reverse,
+         sortKey
+      }
+   })
+
+   invariant(products, "No data returned from top products query")
+
+   return json({
+      products: flattenConnection(products)
+   })
 }
 
 const PRODUCTS_QUERY = `#graphql
