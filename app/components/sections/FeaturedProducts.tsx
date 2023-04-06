@@ -1,6 +1,7 @@
 import { useFetcher } from "@remix-run/react"
 import { Product, ProductSortKeys } from "@shopify/hydrogen/storefront-api-types"
-import { FC, useEffect, useMemo } from "react"
+import { FC, useEffect, useMemo, useId } from "react"
+import { Skeleton } from "../elements"
 
 type LayoutType = "drawer" | "page"
 
@@ -37,7 +38,16 @@ export const FeaturedProducts:FC<FeaturedProductsProps> = ({
 
    console.log(data)
    return (
-      <div>FeaturedProducts</div>
+      <>
+         FeaturedProducts
+         <div>
+            <FeaturedProductsContent 
+               count={count}
+               onClick={onClose}
+               products={undefined}
+            />
+         </div>
+      </>
    )
 }
 
@@ -45,6 +55,23 @@ const FeaturedProductsContent:FC<{
    count: FeaturedProductsProps["count"]
    products: Product[] | undefined
    onClick?: () => void
-}> = () => {
-   return null
+}> = ({
+   count,
+   onClick,
+   products
+}) => {
+   const id = useId()
+
+   return (
+      <>
+         {[...new Array(count)].map((_, i) => (
+            <div
+               key={`${id + i}`}
+               className="grid gap-2"
+            >
+               <Skeleton className="aspect-[3/4]" />
+            </div>
+         ))}
+      </>
+   )
 }

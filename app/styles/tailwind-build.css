@@ -521,6 +521,9 @@ video {
 .aspect-\[6\/5\]{
   aspect-ratio: 6/5;
 }
+.aspect-\[3\/4\]{
+  aspect-ratio: 3/4;
+}
 .h-20{
   height: 5rem;
 }
@@ -625,6 +628,9 @@ video {
 }
 .gap-8{
   gap: 2rem;
+}
+.gap-2{
+  gap: 0.5rem;
 }
 .space-x-10 > :not([hidden]) ~ :not([hidden]){
   --tw-space-x-reverse: 0;
