@@ -22,6 +22,51 @@ export const loader = async ({request, context: { storefront }}: LoaderArgs) => 
          count = parseInt(_count) 
       }
    }catch(_){}
-   
+
    return null
 }
+
+const PRODUCTS_QUERY = `#graphql
+   query(
+      $query: String
+      $count: Int
+      $reverse: Boolean
+      $sortKey: ProductSortKeys
+   ){
+      products(first: $count, sortKey: $sortKey, reverse: $reverse, query: $query){
+         nodes {
+            id
+            title
+            publishedAt
+            handle
+            variants(first: 1){
+               nodes {
+                  id
+                  image {
+                     url
+                     altText
+                     width
+                     height
+                  }
+                  price {
+                     amount
+                     currencyCode
+                  }
+                  compareAtPrice {
+                     amount
+                     currencyCode
+                  }
+                  selectedOptions {
+                     name
+                     value
+                  }
+                  product {
+                     handle
+                     title
+                  }
+               }
+            }
+         }
+      }
+   }
+`
