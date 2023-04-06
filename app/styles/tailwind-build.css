@@ -464,11 +464,11 @@ video {
 .z-50{
   z-index: 50;
 }
-.z-\[1000\]{
-  z-index: 1000;
-}
 .z-\[100000\]{
   z-index: 100000;
+}
+.z-\[1000\]{
+  z-index: 1000;
 }
 .mx-auto{
   margin-left: auto;
@@ -521,23 +521,20 @@ video {
 .aspect-\[6\/5\]{
   aspect-ratio: 6/5;
 }
+.h-20{
+  height: 5rem;
+}
 .h-\[30\%\]{
   height: 30%;
 }
 .h-full{
   height: 100%;
 }
-.h-nav{
-  height: var(--height-nav);
-}
 .h-screen{
   height: 100vh;
 }
 .h-screen-dynamic{
   height: var(--screen-height-dynamic, 100vh);
-}
-.h-20{
-  height: 5rem;
 }
 .w-24{
   width: 6rem;

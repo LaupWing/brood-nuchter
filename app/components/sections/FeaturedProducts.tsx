@@ -26,11 +26,11 @@ export const FeaturedProducts:FC<FeaturedProductsProps> = ({
    const { load, data } = useFetcher()
    const queryString = useMemo(
       () => 
-         ""
-         // Object.entries({count, sortKey, query, reverse})
-         //    .map([key, val] => (val ? `` : null))
-         //    .join("")
+         Object.entries({count, sortKey, query, reverse})
+            .map(([key, val]) => (val ? `${key}=${val}` : null))
+            .join("")
    , [count, sortKey, query, reverse])
+   console.log(queryString)
 
    return (
       <div>FeaturedProducts</div>
