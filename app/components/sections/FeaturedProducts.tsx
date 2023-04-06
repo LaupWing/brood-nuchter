@@ -3,6 +3,7 @@ import { Product, ProductSortKeys } from "@shopify/hydrogen/storefront-api-types
 import { FC, useEffect, useMemo, useId } from "react"
 import { Skeleton } from "../elements"
 import clsx from "clsx"
+import { ProductCard } from "../cards"
 
 type LayoutType = "drawer" | "page"
 
@@ -51,7 +52,7 @@ export const FeaturedProducts:FC<FeaturedProductsProps> = ({
             <FeaturedProductsContent 
                count={count}
                onClick={onClose}
-               products={undefined}
+               products={data?.products}
             />
          </div>
       </>
@@ -68,17 +69,30 @@ const FeaturedProductsContent:FC<{
    products
 }) => {
    const id = useId()
-   
+   console.log(products)
+   if(!products){
+      return (
+         <>
+            {[...new Array(count)].map((_, i) => (
+               <div
+                  key={`${id + i}`}
+                  className="grid gap-2"
+               >
+                  <Skeleton className="aspect-[3/4]" />
+                  <Skeleton className="w-32 h-4" />
+               </div>
+            ))}
+         </>
+      )
+   }
+
    return (
       <>
-         {[...new Array(count)].map((_, i) => (
-            <div
-               key={`${id + i}`}
-               className="grid gap-2"
-            >
-               <Skeleton className="aspect-[3/4]" />
-               <Skeleton className="w-32 h-4" />
-            </div>
+         {products.map(product => (
+            <ProductCard 
+               product={product}
+               key={product.id}
+            />
          ))}
       </>
    )

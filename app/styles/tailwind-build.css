@@ -718,6 +718,15 @@ video {
 .bg-black\/10{
   background-color: rgb(0 0 0 / 0.1);
 }
+.bg-main-gray\/50{
+  background-color: rgb(29 29 29 / 0.5);
+}
+.bg-main-gray\/80{
+  background-color: rgb(29 29 29 / 0.8);
+}
+.bg-main-dark\/80{
+  background-color: rgb(20 19 19 / 0.8);
+}
 .bg-gradient-to-b{
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
 }
