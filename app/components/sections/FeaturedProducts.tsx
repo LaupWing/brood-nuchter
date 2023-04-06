@@ -1,5 +1,5 @@
 import { useFetcher } from "@remix-run/react"
-import { ProductSortKeys } from "@shopify/hydrogen/storefront-api-types"
+import { Product, ProductSortKeys } from "@shopify/hydrogen/storefront-api-types"
 import { FC, useEffect, useMemo } from "react"
 
 type LayoutType = "drawer" | "page"
@@ -39,4 +39,12 @@ export const FeaturedProducts:FC<FeaturedProductsProps> = ({
    return (
       <div>FeaturedProducts</div>
    )
+}
+
+const FeaturedProductsContent:FC<{
+   count: FeaturedProductsProps["count"]
+   products: Product[] | undefined
+   onClick?: () => void
+}> = () => {
+   return null
 }
