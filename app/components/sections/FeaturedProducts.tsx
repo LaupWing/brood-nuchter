@@ -40,7 +40,7 @@ export const FeaturedProducts:FC<FeaturedProductsProps> = ({
    return (
       <>
          FeaturedProducts
-         <div>
+         <div className="grid-cols-4 grid">
             <FeaturedProductsContent 
                count={count}
                onClick={onClose}

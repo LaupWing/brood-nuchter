@@ -16,8 +16,8 @@ export const Skeleton:FC<SkeletonProps> = ({
    className,
    ...props
 }) => {
-   const styles = clsx("rounded bg-primary/10", className)
-   
+   const styles = clsx("rounded bg-black/10", className)
+
    return (
       <Component
          width={width}
