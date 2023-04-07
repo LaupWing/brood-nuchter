@@ -13,7 +13,7 @@ export const CartEmpty:FC<{
    onClose
 }) => {
    const container:Record<CartLayoutsType, string> = {
-      drawer: "content-start gap-4 px-6 pb-8 transition overflow-y-auto md:gap-12 md:px-12 h-screen-no-nav md:pb-12",
+      drawer: "content-start flex flex-col gap-4 px-6 pb-8 transition overflow-y-scroll md:gap-12 md:px-12 md:pb-12",
       page: clsx(
          hidden ? "" : "grid",
          "pb-12 w-full md:items-start gap-4 md:gap-8 lg:gap-12"

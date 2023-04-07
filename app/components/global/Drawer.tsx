@@ -44,12 +44,12 @@ export const Drawer = ({
                leaveFrom="opacity-100"
                leaveTo="opacity-0"
             >
-               <div className="fixed inset bg-black/25"/>
+               <div className="fixed inset-0 bg-black/25"/>
             </Transition.Child>
             <div className="fixed inset-0">
-               <div className="absolute insest-0 overflow-hidden">
+               <div className="absolute inset-0 overflow-hidden">
                   <div className={clsx(
-                     "fixed inset-y-0 max-w-full",
+                     "fixed inset-y-0 flex max-w-full",
                      openFrom === "right" ? "right-0" : ""
                   )}>
                      <Transition.Child
@@ -61,7 +61,7 @@ export const Drawer = ({
                         leaveFrom="translate-x-0"
                         leaveTo={offscreen[openFrom]}
                      >
-                        <Dialog.Panel className="w-screen max-w-lg text-left align-middle transition-all transform shadow-xl h-screen-dynamic bg-main-dark/80 backdrop-blur text-white">
+                        <Dialog.Panel className="w-screen max-w-lg text-left align-middle transition-all transform shadow-xl h-screen-dynamic bg-main-dark/80 backdrop-blur text-white flex flex-col">
                            <header
                               className={clsx(
                                  "stick top-0 flex items-center h-20 px-6 sm:px-8 md:px-12",

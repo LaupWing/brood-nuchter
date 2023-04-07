@@ -518,14 +518,17 @@ video {
 .hidden{
   display: none;
 }
-.aspect-\[6\/5\]{
-  aspect-ratio: 6/5;
-}
 .aspect-\[3\/4\]{
   aspect-ratio: 3/4;
 }
+.aspect-\[6\/5\]{
+  aspect-ratio: 6/5;
+}
 .h-20{
   height: 5rem;
+}
+.h-4{
+  height: 1rem;
 }
 .h-\[30\%\]{
   height: 30%;
@@ -539,20 +542,17 @@ video {
 .h-screen-dynamic{
   height: var(--screen-height-dynamic, 100vh);
 }
-.h-4{
-  height: 1rem;
-}
 .w-24{
   width: 6rem;
+}
+.w-32{
+  width: 8rem;
 }
 .w-full{
   width: 100%;
 }
 .w-screen{
   width: 100vw;
-}
-.w-32{
-  width: 8rem;
 }
 .max-w-\[10rem\]{
   max-width: 10rem;
@@ -596,11 +596,11 @@ video {
 .auto-rows-fr{
   grid-auto-rows: minmax(0, 1fr);
 }
-.grid-cols-4{
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
 .grid-cols-2{
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.grid-cols-4{
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 .flex-col{
   flex-direction: column;
@@ -629,6 +629,9 @@ video {
 .gap-1{
   gap: 0.25rem;
 }
+.gap-2{
+  gap: 0.5rem;
+}
 .gap-4{
   gap: 1rem;
 }
@@ -637,9 +640,6 @@ video {
 }
 .gap-8{
   gap: 2rem;
-}
-.gap-2{
-  gap: 0.5rem;
 }
 .gap-x-6{
   -moz-column-gap: 1.5rem;
@@ -694,6 +694,9 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(243 164 70 / var(--tw-bg-opacity));
 }
+.bg-black\/10{
+  background-color: rgb(0 0 0 / 0.1);
+}
 .bg-black\/25{
   background-color: rgb(0 0 0 / 0.25);
 }
@@ -707,25 +710,12 @@ video {
 .bg-main-dark\/60{
   background-color: rgb(20 19 19 / 0.6);
 }
+.bg-main-dark\/80{
+  background-color: rgb(20 19 19 / 0.8);
+}
 .bg-main-gray{
   --tw-bg-opacity: 1;
   background-color: rgb(29 29 29 / var(--tw-bg-opacity));
-}
-.bg-white{
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-.bg-black\/10{
-  background-color: rgb(0 0 0 / 0.1);
-}
-.bg-main-gray\/50{
-  background-color: rgb(29 29 29 / 0.5);
-}
-.bg-main-gray\/80{
-  background-color: rgb(29 29 29 / 0.8);
-}
-.bg-main-dark\/80{
-  background-color: rgb(20 19 19 / 0.8);
 }
 .bg-gradient-to-b{
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
@@ -868,9 +858,6 @@ video {
 }
 .opacity-100{
   opacity: 1;
-}
-.opacity-50{
-  opacity: 0.5;
 }
 .opacity-80{
   opacity: 0.8;
