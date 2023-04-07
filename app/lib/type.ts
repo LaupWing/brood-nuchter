@@ -1,0 +1,9 @@
+export enum CartAction {
+   ADD_TO_CART = "ADD_TO_CART",
+   REMOVE_FROM_CART = "REMOVE_FROM_CART",
+   UPDATE_CART = "UPDATE_CART",
+   UPDATE_DISCOUNT = "UDPATE_DISCOUNT",
+   UDPATE_BUYER_IDENTITY = "UPDATE_BUYER_IDENTITY"
+}
+
+export type CartActions = keyof typeof CartAction
