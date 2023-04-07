@@ -1,4 +1,4 @@
-import { FC, PropsWithChildren, Suspense } from "react"
+import { FC, PropsWithChildren, Suspense, useEffect } from "react"
 import { GiSlicedBread } from "react-icons/gi"
 import { AiOutlineShop } from "react-icons/ai"
 import { useWindowScroll } from "react-use"
@@ -9,6 +9,7 @@ import { BiMenuAltRight, BiSearchAlt } from "react-icons/bi"
 import { Drawer, useDrawer } from "~/components/global"
 import { Cart, CartLoading } from "~/components/cart"
 import { Await, useMatches } from "@remix-run/react"
+import { useCartFetchers } from "~/hooks/useCartFetchers"
 
 interface LayoutProps extends PropsWithChildren {
    layout: LayoutData
@@ -88,6 +89,12 @@ const Header:FC<{
       openDrawer: openCart,
       closeDrawer: closeCart
    } = useDrawer()
+
+   const addToCartFetchers = useCartFetchers("ADD_TO_CART")
+
+   useEffect(() => {
+      
+   }, [addToCartFetchers])
 
    return (
       <>
