@@ -84,6 +84,21 @@ const cartCreate = async ({
    return cartCreate
 }
 
+const ADD_LINES_MUTATION = `#graphql
+   mutation($cartId: ID!, $lines: [CartLineInput!]!){
+      cartLinesAdd(cartId: $cartId, lines: $lines){
+         cart {
+            id,
+            totalQuantity
+         }
+         errors: userErrors {
+            message
+            field
+            code
+         }
+      }
+   }
+`
 const cartAdd = async ({
    cartId,
    lines,
