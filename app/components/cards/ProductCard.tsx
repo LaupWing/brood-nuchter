@@ -1,8 +1,9 @@
-import { Image, Money, flattenConnection } from "@shopify/hydrogen"
+import { Image, Money, ShopifyAnalyticsProduct, flattenConnection } from "@shopify/hydrogen"
 import { Product } from "@shopify/hydrogen/storefront-api-types"
 import { SerializeFrom } from "@shopify/remix-oxygen"
 import { FC } from "react"
 import { IconInfo } from "../elements/Icons"
+import { AddToCartButton } from "../elements"
 
 interface ProductCardProps {
    product: SerializeFrom<Product> 
@@ -14,6 +15,15 @@ export const ProductCard:FC<ProductCardProps> = ({ product }) => {
    }
    
    const firstVariant = flattenConnection(product.variants)[0]
+   const productAnalytics: ShopifyAnalyticsProduct = {
+      productGid: product.id,
+      variantGid: firstVariant.id,
+      name: product.title,
+      variantName: firstVariant.title,
+      brand: product.vendor,
+      price: firstVariant.price.amount,
+      quantity: 1
+   }
 
    return (
       <div className="bg-main-gray shadow-main-gray shadow rounded hover:bg-accent-fire/30 auto-rows-fr duration-200 p-4 text-main-light flex flex-col">
@@ -49,7 +59,16 @@ export const ProductCard:FC<ProductCardProps> = ({ product }) => {
             </div>
             <div className="flex flex-col justify-between flex-1">
                <h2 className="font-bold font-serif tracking-wider text-lg">{product.title}</h2>
-               <button className="bg-accent-fire ml-auto mt-2 text-xs text-main-dark font-bold rounded px-2 py-1">Toevoegen</button>
+               <AddToCartButton 
+                  className="bg-accent-fire ml-auto mt-2 text-xs text-main-dark font-bold rounded px-2 py-1"
+                  lines={[{
+                     merchandiseId: firstVariant.id,
+                     quantity: 1
+                  }]}
+                  analytics={}
+               >
+                  Toevoegen
+               </AddToCartButton>
             </div>
          </div>
       </div>
