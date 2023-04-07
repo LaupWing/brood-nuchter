@@ -69,7 +69,6 @@ const FeaturedProductsContent:FC<{
    products
 }) => {
    const id = useId()
-   console.log(products)
    if(!products){
       return (
          <>
