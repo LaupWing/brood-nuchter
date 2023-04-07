@@ -83,3 +83,25 @@ const cartCreate = async ({
 
    return cartCreate
 }
+
+const cartAdd = async ({
+   cartId,
+   lines,
+   storefront
+}: {
+   cartId: string
+   lines: CartLineInput[]
+   storefront: AppLoadContext["storefront"]
+}) => {
+   const {} = await storefront.mutate<{
+      cartLinesAdd: {
+         cart: CartType
+         errors: CartUserError[]
+      }
+   }>("", {
+      variables: {
+         cartId,
+         lines
+      }
+   })
+}
