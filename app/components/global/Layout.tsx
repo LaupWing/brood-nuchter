@@ -119,7 +119,7 @@ const CartDrawer:FC<{
          heading="Cart"
          openFrom="right"
       >
-         <div className="grid flex-1">
+         <div className="flex-1 flex flex-col min-h-0">
             <Suspense fallback={<CartLoading />}>
                <Await resolve={root.data?.cart}>
                   {(cart) => (

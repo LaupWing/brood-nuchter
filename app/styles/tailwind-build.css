@@ -542,6 +542,9 @@ video {
 .h-screen-dynamic{
   height: var(--screen-height-dynamic, 100vh);
 }
+.min-h-0{
+  min-height: 0px;
+}
 .w-24{
   width: 6rem;
 }

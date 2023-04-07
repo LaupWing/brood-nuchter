@@ -61,7 +61,7 @@ export const Drawer = ({
                         leaveFrom="translate-x-0"
                         leaveTo={offscreen[openFrom]}
                      >
-                        <Dialog.Panel className="w-screen max-w-lg text-left align-middle transition-all transform shadow-xl h-screen-dynamic bg-main-dark/80 backdrop-blur text-white flex flex-col">
+                        <Dialog.Panel className="w-screen max-w-lg text-left align-middle transition-all transform shadow-xl h-screen-dynamic bg-main-dark/80 backdrop-blur text-white flex flex-col min-h-0">
                            <header
                               className={clsx(
                                  "stick top-0 flex shrink-0 items-center h-20 px-6 sm:px-8 md:px-12",
