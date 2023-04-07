@@ -30,7 +30,12 @@ export const action = async ({request, context}: ActionArgs) => {
          invariant(lines.length, "No lines added")
 
          if(!cartId){
-            // result = await cartCreate
+            result = await cartCreate({
+               input: {
+                  lines
+               },
+               storefront
+            })
          } else {
 
          }
@@ -54,7 +59,6 @@ const CREATE_CART_MUTATION = `#graphql
       }
    }
 `
-
 const cartCreate = async ({
    input,
    storefront
@@ -62,11 +66,20 @@ const cartCreate = async ({
    input: CartInput
    storefront: AppLoadContext["storefront"]
 }) => {
-   const {} = await storefront.mutate<{
+   const {
+      cartCreate
+   } = await storefront.mutate<{
       cartCreate: {
          cart: CartType
          errors: CartUserError[]
       }
       errors: UserError[]
-   }>("")
+   }>(CREATE_CART_MUTATION, {
+      variables: {
+         input
+      }
+   })
+   invariant(cartCreate, "No data returned from the cartCreate mutation")
+
+   return cartCreate
 }
