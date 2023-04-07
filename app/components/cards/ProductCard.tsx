@@ -65,7 +65,10 @@ export const ProductCard:FC<ProductCardProps> = ({ product }) => {
                      merchandiseId: firstVariant.id,
                      quantity: 1
                   }]}
-                  analytics={}
+                  analytics={{
+                     product: [productAnalytics],
+                     totalValue: parseFloat(productAnalytics.price)
+                  }}
                >
                   Toevoegen
                </AddToCartButton>
