@@ -556,6 +556,9 @@ video {
 .h-24{
   height: 6rem;
 }
+.h-10{
+  height: 2.5rem;
+}
 .min-h-0{
   min-height: 0px;
 }
@@ -570,6 +573,9 @@ video {
 }
 .w-screen{
   width: 100vw;
+}
+.w-10{
+  width: 2.5rem;
 }
 .max-w-\[10rem\]{
   max-width: 10rem;
@@ -823,6 +829,9 @@ video {
 .text-left{
   text-align: left;
 }
+.text-center{
+  text-align: center;
+}
 .align-middle{
   vertical-align: middle;
 }
@@ -972,6 +981,11 @@ video {
 
 .hover\:bg-accent-fire\/30:hover{
   background-color: rgb(243 164 70 / 0.3);
+}
+
+.disabled\:bg-gray-300:disabled{
+  --tw-bg-opacity: 1;
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
 }
 
 @media (min-width: 640px){

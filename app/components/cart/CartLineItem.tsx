@@ -1,7 +1,8 @@
-import { Link } from "@remix-run/react"
+import { Link, useFetcher } from "@remix-run/react"
 import { Image } from "@shopify/hydrogen"
-import { CartLine } from "@shopify/hydrogen/storefront-api-types"
-import { FC } from "react"
+import { CartLine, CartLineUpdateInput } from "@shopify/hydrogen/storefront-api-types"
+import { FC, ReactNode } from "react"
+import { CartAction } from "~/lib/type"
 
 export const CartLineItem:FC<{
    line: CartLine
@@ -87,8 +88,54 @@ const CartLineQuantityAdjust:FC<{line: CartLine}> = ({
             Quantity, {quantity}
          </label>
          <div className="flex items-center border rounded">
-            
+            <UpdateCartButton lines={[{id: lineId, quantity: prevQuantity}]}>
+               <button
+                  name="decrease-quantity"
+                  aria-label="Decrease quantity"
+                  className="w-10 h-10 transition disabled:bg-gray-300"
+                  disabled={quantity <= 1}
+                  value={prevQuantity}
+               >
+                  <span>&#8722;</span>
+               </button>
+            </UpdateCartButton>
+
+            <div className="px-2 text-center" data-test="item-quantity">
+               {quantity}
+            </div>
+
+            <UpdateCartButton lines={[{id: lineId, quantity: nextQuantity}]}>
+               <button>
+                  <span>&#43;</span>
+               </button>
+            </UpdateCartButton>
          </div>
       </>
+   )
+}
+
+const UpdateCartButton:FC<{
+   children: ReactNode
+   lines: CartLineUpdateInput[]
+}> = ({
+   children,
+   lines
+}) => {
+   const fetcher = useFetcher()
+
+   return (
+      <fetcher.Form action="/cart" method="post">
+         <input 
+            type="hidden" 
+            name="cartAction" 
+            value={CartAction.UPDATE_CART}
+         />
+         <input 
+            type="hidden" 
+            name="lines" 
+            value={JSON.stringify(lines)}
+         />
+         {children}
+      </fetcher.Form>
    )
 }
