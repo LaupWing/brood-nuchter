@@ -93,7 +93,10 @@ const Header:FC<{
    const addToCartFetchers = useCartFetchers("ADD_TO_CART")
 
    useEffect(() => {
-      console.log(addToCartFetchers)      
+      if(isCartOpen || !addToCartFetchers.length){
+         return
+      }
+      openCart()    
    }, [addToCartFetchers])
 
    return (
