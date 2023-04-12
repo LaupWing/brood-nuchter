@@ -133,11 +133,13 @@ const CartDrawer:FC<{
             <Suspense fallback={<CartLoading />}>
                <Await resolve={root.data?.cart}>
                   {(cart) => (
-                     <Cart 
-                        layout="drawer"
-                        onClose={onClose}
-                        cart={cart}
-                     />
+                     <>
+                        <Cart 
+                           layout="drawer"
+                           onClose={onClose}
+                           cart={cart}
+                        />
+                     </>
                   )}
                </Await>
             </Suspense>

@@ -54,12 +54,14 @@ export async function loader({ context }: LoaderArgs) {
    })
    const cartId = await context.session.get("cartId")
    
-   return defer({ layout: {
-      shop: data.shop!,
-      headerMenu: data.headerMenu!,
-      footerMenu: data.footerMenu!,
+   return defer({ 
+      layout: {
+         shop: data.shop!,
+         headerMenu: data.headerMenu!,
+         footerMenu: data.footerMenu!,
+      }, 
       cart: cartId ? getCart(context, cartId) : undefined
-   } })
+   })
 }
 
 export default function App() {
