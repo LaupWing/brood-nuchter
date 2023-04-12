@@ -12,15 +12,15 @@ export const Cart:FC<{
    onClose,
    cart
 }) => {
-   const linesCount = Boolean(cart?.lines?.edges?.length || 0)
+   const isEmpty = Boolean(cart?.lines?.edges?.length || 0)
+   console.log(cart)
 
    return (
       <>
-         <CartEmpty 
-            hidden={linesCount}
+         {isEmpty && <CartEmpty
             onClose={onClose}
             layout={layout}
-         />
+         />}
       </>
    )
 }
