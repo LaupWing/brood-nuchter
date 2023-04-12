@@ -683,6 +683,9 @@ video {
 .self-stretch{
   align-self: stretch;
 }
+.overflow-auto{
+  overflow: auto;
+}
 .overflow-hidden{
   overflow: hidden;
 }
@@ -786,6 +789,9 @@ video {
 }
 .pt-16{
   padding-top: 4rem;
+}
+.pb-6{
+  padding-bottom: 1.5rem;
 }
 .text-left{
   text-align: left;
@@ -966,6 +972,9 @@ video {
   }
   .md\:gap-8{
     gap: 2rem;
+  }
+  .md\:gap-10{
+    gap: 2.5rem;
   }
   .md\:px-12{
     padding-left: 3rem;
