@@ -56,11 +56,39 @@ export const CartLineItem:FC<{
                </div>
                <div className="flex items-center gap-2">
                   <div className="flex justify-start">
-                     
+
                   </div>
                </div>
             </div>
          </div>
       </li>
+   )
+}
+
+const CartLineQuantityAdjust:FC<{line: CartLine}> = ({
+   line
+}) => {
+   if(!line || typeof line?.quantity === "undefined") {
+      return null
+   }
+   const {
+      id: lineId,
+      quantity
+   } = line
+   const prevQuantity = Number(Math.max(0, quantity - 1).toFixed(0))
+   const nextQuantity = Number((quantity + 1).toFixed(0))
+
+   return (
+      <>
+         <label 
+            htmlFor={`quantity-${lineId}`}
+            className="sr-only"
+         >
+            Quantity, {quantity}
+         </label>
+         <div className="flex items-center border rounded">
+            
+         </div>
+      </>
    )
 }
