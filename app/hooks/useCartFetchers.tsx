@@ -4,5 +4,12 @@ export const useCartFetchers = (actionName:string) => {
    const fetchers = useFetchers()
    const cartFetchers = []
 
-   console.log(fetchers)
+   for(const fetcher of fetchers) {
+      const formData = fetcher.submission?.formData
+      if(formData && formData.get("cartAction") === actionName) {
+         cartFetchers.push(fetcher)
+      }
+   }
+
+   return cartFetchers
 }
