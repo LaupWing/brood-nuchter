@@ -13,7 +13,6 @@ export const Cart:FC<{
    cart
 }) => {
    const isEmpty = Boolean(cart?.lines?.edges?.length || 0)
-   console.log(cart)
 
    return (
       <>
