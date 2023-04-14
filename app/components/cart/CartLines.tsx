@@ -13,7 +13,7 @@ export const CartLines:FC<{
    const currentLines = cartLines ? flattenConnection(cartLines) : []
    const containers:Record<"drawer"|"page", string> = {
       page: "flex-grow md:traslate-y-4",
-      drawer: "px-6 pb-6 sm-mas:pt-2 overflow-auto transition md:px-12"
+      drawer: "px-6 pb-6 sm-mas:pt-2 flex flex-col flex-1 transition md:px-12"
    }
 
    return (
