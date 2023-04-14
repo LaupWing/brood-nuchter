@@ -63,7 +63,7 @@ export const CartLineItem:FC<{
                   <ItemRemoveButton lineIds={[id]} />
                </div>
             </div>
-            
+            <CartLinePrice line={line} as="span" />
          </div>
       </li>
    )
@@ -198,8 +198,8 @@ const CartLinePrice:FC<{
    return (
       <Money
          withoutTrailingZeros
-         {...props}
          data={moneyV2}
+         {...props}
       />
    )
 }
