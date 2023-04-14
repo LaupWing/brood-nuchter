@@ -108,7 +108,12 @@ const CartLineQuantityAdjust:FC<{line: CartLine}> = ({
             </div>
 
             <UpdateCartButton lines={[{id: lineId, quantity: nextQuantity}]}>
-               <button>
+               <button
+                  className="w-10 h-10 transition"
+                  name="increase-quantity"
+                  value={nextQuantity}
+                  aria-label="Increase quantity"
+               >
                   <span>&#43;</span>
                </button>
             </UpdateCartButton>
