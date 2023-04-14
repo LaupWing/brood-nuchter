@@ -195,6 +195,7 @@ const CartLinePrice:FC<{
 
    return (
       <Money
+         className="font-serif text-2xl"
          withoutTrailingZeros
          data={moneyV2}
          {...props}
