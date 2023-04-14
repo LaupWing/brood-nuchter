@@ -1,5 +1,6 @@
 import type { IconType } from "react-icons"
 import { AiOutlineInfoCircle } from "react-icons/ai"
+import { BsTrashFill } from "react-icons/bs"
 
 export const IconInfo:IconType = (props) => (
    <AiOutlineInfoCircle
@@ -8,7 +9,7 @@ export const IconInfo:IconType = (props) => (
 )
 
 export const IconTrashcan:IconType = (props) => (
-   <AiOutlineInfoCircle
+   <BsTrashFill
       {...props} 
    />
 )
