@@ -57,7 +57,7 @@ export const CartLineItem:FC<{
                </div>
                <div className="flex items-center gap-2">
                   <div className="flex justify-start">
-
+                     <CartLineQuantityAdjust line={line} />
                   </div>
                </div>
             </div>
@@ -136,6 +136,37 @@ const UpdateCartButton:FC<{
             value={JSON.stringify(lines)}
          />
          {children}
+      </fetcher.Form>
+   )
+}
+
+const ItemRemoveButton:FC<{
+   lineIds: CartLine["id"][]
+}> = ({ lineIds }) => {
+   const fetcher = useFetcher()
+
+   return (
+      <fetcher.Form
+         action="/cart"
+         method="post"
+      >
+         <input 
+            type="hidden" 
+            name="cartAction"
+            value={CartAction.REMOVE_FROM_CART}
+         />
+         <input 
+            type="hidden" 
+            name="lineIds"
+            value={JSON.stringify(lineIds)}
+         />
+         <button 
+            className="flex items-center justify-center w-10 h-10 border rounded"
+            type="submit"
+         >
+            <span className="sr-only">remove</span>
+            
+         </button>
       </fetcher.Form>
    )
 }
