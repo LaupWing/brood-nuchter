@@ -18,7 +18,7 @@ export const CartLines:FC<{
 
    return (
       <section
-         aria-aria-labelledby="cart-contents"
+         aria-labelledby="cart-contents"
          className={containers[layout]}
       >
          <ul className="grid gap-6 md:gap-10">
