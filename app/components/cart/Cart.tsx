@@ -1,6 +1,7 @@
 import type { FC } from "react"
 import type { Cart as CartType } from "@shopify/hydrogen/storefront-api-types"
 import { CartEmpty } from "./CartEmpty"
+import { CartLines } from "./CartLines"
 export type CartLayoutsType = "page" | "drawer"
 
 export const Cart:FC<{
@@ -12,14 +13,22 @@ export const Cart:FC<{
    onClose,
    cart
 }) => {
-   const isEmpty = Boolean(cart?.lines?.edges?.length || 0)
+   const notEmpty = Boolean(cart?.lines?.edges?.length || 0)
+   console.log(notEmpty)
 
    return (
       <>
-         {isEmpty && <CartEmpty
-            onClose={onClose}
-            layout={layout}
-         />}
+         {notEmpty ? (
+            <CartEmpty
+               onClose={onClose}
+               layout={layout}
+            />
+         ) : (
+            // <CartLines 
+            //    cart={cart}
+            // />
+            <></>
+         )}
       </>
    )
 }
