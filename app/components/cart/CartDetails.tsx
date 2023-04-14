@@ -1,5 +1,6 @@
 import type { Cart as CartType } from "@shopify/hydrogen/storefront-api-types"
 import type { FC } from "react"
+import { CartLines } from "./CartLines"
 
 export const CartDetails:FC<{
    layout: "drawer" | "page"
@@ -17,7 +18,10 @@ export const CartDetails:FC<{
 
    return (
       <div className={container[layout]}>
-         
+         <CartLines 
+            lines={cart?.lines} 
+            layout={layout} 
+         />
       </div>
    )
 }
