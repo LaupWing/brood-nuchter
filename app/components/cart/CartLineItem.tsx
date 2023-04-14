@@ -1,5 +1,5 @@
 import { Link, useFetcher } from "@remix-run/react"
-import { Image } from "@shopify/hydrogen"
+import { Image, Money } from "@shopify/hydrogen"
 import { CartLine, CartLineUpdateInput } from "@shopify/hydrogen/storefront-api-types"
 import { FC, ReactNode } from "react"
 import { CartAction } from "~/lib/type"
@@ -60,8 +60,10 @@ export const CartLineItem:FC<{
                   <div className="flex justify-start">
                      <CartLineQuantityAdjust line={line} />
                   </div>
+                  <ItemRemoveButton lineIds={[id]} />
                </div>
             </div>
+            
          </div>
       </li>
    )
@@ -169,5 +171,35 @@ const ItemRemoveButton:FC<{
             <IconTrashcan aria-hidden />
          </button>
       </fetcher.Form>
+   )
+}
+
+const CartLinePrice:FC<{
+   line: CartLine
+   priceType?: "regular" | "compareAt"
+   [key: string]: any
+}> = ({
+   line,
+   priceType = "regular",
+   ...props
+}) => {
+   if(!line.cost?.amountPerQuantity || !line?.cost?.totalAmount) {
+      return null
+   }
+
+   const moneyV2 = priceType === "regular"
+      ? line.cost.totalAmount
+      : line.cost.compareAtAmountPerQuantity
+
+   if (moneyV2 == null) {
+      return null
+   }
+
+   return (
+      <Money
+         withoutTrailingZeros
+         {...props}
+         data={moneyV2}
+      />
    )
 }
