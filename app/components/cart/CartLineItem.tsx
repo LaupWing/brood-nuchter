@@ -49,13 +49,13 @@ export const CartLineItem:FC<{
                      </Link>
                   ) : merchandise?.product.title || ""}
                </h3>
-               <div className="grid pb-2">
+               {/* <div className="grid pb-2">
                   {(merchandise?.selectedOptions || []).map(option => (
                      <span key={option.name}>
                         {option.name}: {option.value}
                      </span>
                   ))}
-               </div>
+               </div> */}
                <div className="flex items-center gap-2">
                   <div className="flex justify-start">
                      <CartLineQuantityAdjust line={line} />
