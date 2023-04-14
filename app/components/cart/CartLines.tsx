@@ -1,6 +1,7 @@
 import { flattenConnection } from "@shopify/hydrogen"
 import type { Cart as CartType } from "@shopify/hydrogen/storefront-api-types"
 import type { FC } from "react"
+import { CartLineItem } from "./CartLineItem"
 
 export const CartLines:FC<{
    layout: "drawer" | "page"
@@ -21,7 +22,12 @@ export const CartLines:FC<{
          className={containers[layout]}
       >
          <ul className="grid gap-6 md:gap-10">
-            
+            {currentLines.map((line) => (
+               <CartLineItem 
+                  key={line.id}
+                  line={line}
+               />
+            ))}
          </ul>
       </section>
    )
