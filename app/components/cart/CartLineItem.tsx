@@ -41,7 +41,7 @@ export const CartLineItem:FC<{
          </div>
 
          <div className="flex justify-between flex-grow">
-            <div className="grid gap-2">
+            <div className="flex flex-col justify-between">
                <h3>
                   {merchandise?.product?.handle ? (
                      <Link to={`/products/${merchandise.product.handle}`}>
@@ -49,13 +49,6 @@ export const CartLineItem:FC<{
                      </Link>
                   ) : merchandise?.product.title || ""}
                </h3>
-               {/* <div className="grid pb-2">
-                  {(merchandise?.selectedOptions || []).map(option => (
-                     <span key={option.name}>
-                        {option.name}: {option.value}
-                     </span>
-                  ))}
-               </div> */}
                <div className="flex items-center gap-2">
                   <div className="flex justify-start">
                      <CartLineQuantityAdjust line={line} />
@@ -95,7 +88,7 @@ const CartLineQuantityAdjust:FC<{line: CartLine}> = ({
                <button
                   name="decrease-quantity"
                   aria-label="Decrease quantity"
-                  className="w-10 h-10 transition disabled:bg-gray-300"
+                  className="w-10 h-10 transition disabled:bg-gray-300 bg-accent-fire"
                   disabled={quantity <= 1}
                   value={prevQuantity}
                >
@@ -103,13 +96,13 @@ const CartLineQuantityAdjust:FC<{line: CartLine}> = ({
                </button>
             </UpdateCartButton>
 
-            <div className="px-2 text-center" data-test="item-quantity">
+            <div className="px-4 text-center" data-test="item-quantity">
                {quantity}
             </div>
 
             <UpdateCartButton lines={[{id: lineId, quantity: nextQuantity}]}>
                <button
-                  className="w-10 h-10 transition"
+                  className="w-10 h-10 transition disabled:bg-gray-300 bg-accent-fire"
                   name="increase-quantity"
                   value={nextQuantity}
                   aria-label="Increase quantity"

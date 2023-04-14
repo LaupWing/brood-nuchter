@@ -988,6 +988,18 @@ video {
   background-color: rgb(209 213 219 / var(--tw-bg-opacity));
 }
 
+.disabled\:bg-accent-fire\/10:disabled{
+  background-color: rgb(243 164 70 / 0.1);
+}
+
+.disabled\:opacity-10:disabled{
+  opacity: 0.1;
+}
+
+.disabled\:opacity-5:disabled{
+  opacity: 0.05;
+}
+
 @media (min-width: 640px){
   .sm\:grid-cols-4{
     grid-template-columns: repeat(4, minmax(0, 1fr));
