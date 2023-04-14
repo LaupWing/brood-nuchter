@@ -3,6 +3,7 @@ import { Image } from "@shopify/hydrogen"
 import { CartLine, CartLineUpdateInput } from "@shopify/hydrogen/storefront-api-types"
 import { FC, ReactNode } from "react"
 import { CartAction } from "~/lib/type"
+import { IconTrashcan } from "../elements"
 
 export const CartLineItem:FC<{
    line: CartLine
@@ -165,7 +166,7 @@ const ItemRemoveButton:FC<{
             type="submit"
          >
             <span className="sr-only">remove</span>
-            
+            <IconTrashcan aria-hidden />
          </button>
       </fetcher.Form>
    )
