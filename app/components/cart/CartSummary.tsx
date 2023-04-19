@@ -13,7 +13,7 @@ export const CartSummary:FC<{
 }) => {
    const containers:Record<"drawer"|"page", string> = {
       page: "",
-      drawer: "grid gap-3 p-4 border-t"
+      drawer: "grid gap-3 md:px-12 px-6 p-4 border-t"
    }
    return (
       <section
@@ -26,7 +26,7 @@ export const CartSummary:FC<{
          >
             Order Summary
          </h2>
-         <dl className="gird">
+         <dl className="grid">
             <div className="flex items-center justify-between font-medium">
                <dt>Subtotal</dt>
                <dd>
