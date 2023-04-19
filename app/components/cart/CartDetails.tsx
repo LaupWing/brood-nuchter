@@ -1,6 +1,9 @@
 import type { Cart as CartType } from "@shopify/hydrogen/storefront-api-types"
 import type { FC } from "react"
 import { CartLines } from "./CartLines"
+import { CartSummary } from "./CartSummary"
+import { CartDiscount } from "./CartDiscount"
+import { CartCheckoutActions } from "./CartCheckoutActions"
 
 export const CartDetails:FC<{
    layout: "drawer" | "page"
@@ -22,6 +25,12 @@ export const CartDetails:FC<{
             lines={cart?.lines} 
             layout={layout} 
          />
+         {!isZeroCost && (
+            <CartSummary cost={cart.cost} layout="drawer">
+               <CartDiscount discountCodes={cart.discountCodes} />
+               <CartCheckoutActions checkoutUrl={cart.checkoutUrl} />
+            </CartSummary>
+         )}
       </div>
    )
 }
