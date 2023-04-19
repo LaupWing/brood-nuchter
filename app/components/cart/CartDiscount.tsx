@@ -3,6 +3,7 @@ import type { Cart as CartType } from "@shopify/hydrogen/storefront-api-types"
 import { useFetcher } from "@remix-run/react"
 import { CartAction } from "~/lib/type"
 import { IconTrashcan } from "../elements"
+import clsx from "clsx"
 
 export const CartDiscount:FC<{
    discountCodes: CartType["discountCodes"]
@@ -26,6 +27,15 @@ export const CartDiscount:FC<{
                </div>
             </div>
          </dl>
+
+         <UpdateDiscountForm>
+            <div className={clsx(
+               codes ? "hidden" : "flex",
+               "items-center gap-4 justify-between"
+            )}>
+
+            </div>
+         </UpdateDiscountForm>
       </div>
    )
 }
