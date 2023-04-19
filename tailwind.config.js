@@ -27,5 +27,7 @@ module.exports = {
          serif: ["Playfair Display","sans-serif"]
       }
    },
-   plugins: [],
+   plugins: [
+      require("@tailwindcss/forms")
+   ],
 }
