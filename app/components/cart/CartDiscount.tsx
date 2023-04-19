@@ -2,6 +2,7 @@ import type { FC, PropsWithChildren } from "react"
 import type { Cart as CartType } from "@shopify/hydrogen/storefront-api-types"
 import { useFetcher } from "@remix-run/react"
 import { CartAction } from "~/lib/type"
+import { IconTrashcan } from "../elements"
 
 export const CartDiscount:FC<{
    discountCodes: CartType["discountCodes"]
@@ -14,7 +15,14 @@ export const CartDiscount:FC<{
             <div className="flex items-center justify-between font-medium">
                <dt>Dicount(s)</dt>
                <div className="flex items-center justify-between">
-
+                  <UpdateDiscountForm>
+                     <button>
+                        <IconTrashcan
+                           aria-hidden="true"
+                           size={22}
+                        />
+                     </button>
+                  </UpdateDiscountForm>
                </div>
             </div>
          </dl>
