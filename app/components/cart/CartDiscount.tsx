@@ -33,7 +33,14 @@ export const CartDiscount:FC<{
                codes ? "hidden" : "flex",
                "items-center gap-4 justify-between"
             )}>
-
+               <input 
+                  type="text" 
+                  placeholder="Discount code"
+                  name="discountCode"
+               />
+               <button className="flex justify-end font-medium whitespace-nowrap">
+                  Apply Discount
+               </button>
             </div>
          </UpdateDiscountForm>
       </div>
