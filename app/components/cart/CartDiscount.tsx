@@ -37,7 +37,8 @@ export const CartDiscount:FC<{
                   type="text" 
                   placeholder="Discount code"
                   name="discountCode"
-               />
+                  className="flex-1 rounded border p-1"
+               /> 
                <button className="flex justify-end font-medium whitespace-nowrap">
                   Apply Discount
                </button>
